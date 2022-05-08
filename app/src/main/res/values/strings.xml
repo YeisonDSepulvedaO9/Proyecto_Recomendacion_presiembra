@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Proyecto_Recomendacion_presiembra</string>
+
+    <string name="registrar">Registrar</string>
+    <string name="sesion">Sesión</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+
+
+    <string-array name="municipios">
+        <item>Soacha</item>
+        <item>Sibate</item>
+    </string-array>
+
+    <string-array name="cultivos">
+        <item>Arveja</item>
+        <item>Fresa</item>
+        <item>Papa</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reporte_Recomendacion"
+    android:background="@drawable/total"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/Reporte_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Reporte de recomendacion" />
+
+    <ImageView
+        android:id="@+id/icono_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        app:srcCompat="@drawable/icono_principal" />
+
+    <TextView
+        android:id="@+id/Datos_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Datos" />
+
+    <EditText
+        android:id="@+id/datos_editar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/mejor_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="mejor_temporada" />
+
+    <EditText
+        android:id="@+id/mejor_editar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/oferta_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Oferta y demanda" />
+
+    <EditText
+        android:id="@+id/oferta_editar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+    <TextView
+        android:id="@+id/ciclo_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Ciclo de vida" />
+    <EditText
+        android:id="@+id/ciclo_editar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/rentabilidad_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Rentabilidad " />
+    <EditText
+        android:id="@+id/rentabilidad_editar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Guardar " />
+
+    <Button
+        android:id="@+id/volver2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Volver a inicio" />
+
+
+</LinearLayout>
+

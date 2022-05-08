@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_realizar_recomendacion"
+    android:background="@drawable/total">
+
+
+    <EditText
+        android:id="@+id/txt_Fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="dd-mm-aaa"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="6dp"
+        android:text="Fecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rec_spinner_cultivos" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="8dp"
+        android:text="Cultivo de interés"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditText_hectareas" />
+
+    <EditText
+        android:id="@+id/EditText_hectareas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Ejm: 5"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="57dp"
+        android:text="Hectaréas del terreno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="32dp"
+        android:text="RECOMENDACIÓN"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="32dp"
+        android:text="Municipio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <ImageButton
+        android:id="@+id/calndar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_Fecha"
+        app:layout_constraintStart_toEndOf="@+id/txt_Fecha"
+        app:srcCompat="@android:drawable/ic_menu_today" />
+
+    <Spinner
+        android:id="@+id/Reco_spinner_municipios"
+        android:layout_width="213dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="10dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="189dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="29dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Recomendar"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_GPS" />
+
+    <Switch
+        android:id="@+id/switch_GPS"
+        android:layout_width="167dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="152dp"
+        android:text="Activar GPS"
+        android:onClick="onClick_GPS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Fecha" />
+
+    <Spinner
+        android:id="@+id/Rec_spinner_cultivos"
+        android:layout_width="213dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="4dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="62dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/switch_GPS"
+        app:layout_constraintTop_toBottomOf="@+id/calndar_button" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="299dp"
+        android:layout_marginTop="11dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

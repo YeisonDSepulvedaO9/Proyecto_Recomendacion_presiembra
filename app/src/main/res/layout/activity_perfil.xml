@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/total"
+    android:orientation="vertical"
+    tools:context=".Perfil">
+
+
+    <ImageView
+        android:id="@+id/icono_P"
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        app:srcCompat="@drawable/icono_principal" />
+
+    <TextView
+        android:id="@+id/Nombre_P"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Nombre:"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"/>
+       />
+
+    <EditText
+        android:id="@+id/Nombre_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="30dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/Municipio_P"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Municipio"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"/>/>
+
+    <EditText
+        android:id="@+id/Municipio_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"/>/>
+
+    <TextView
+        android:id="@+id/cultivo_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cultivo de interes"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"/>/>
+
+    <EditText
+        android:id="@+id/cultivo_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"/>
+        />
+
+
+
+    <Button
+        android:id="@+id/volver_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"/>/>
+
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/cardview_dark_background"/>
+    <item>
+    <bitmap
+        android:gravity="center"
+        android:src="@drawable/bienv_splas"
+        android:text="Bienvenido"
+        android:textSize="40dp"
+        android:fontFamily="Lobster"/>
+    </item>
+
+</layer-list>
