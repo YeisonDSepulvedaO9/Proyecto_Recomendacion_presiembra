@@ -54,12 +54,8 @@ public class Activity_inicio_sesion extends AppCompatActivity implements View.On
                     i3.putExtra("id", ux.getId());
                     startActivity(i3);
                     finish();
-
-
                 } else {
                     Toast.makeText(this, "Usuario y/o contraseña incorrecta", Toast.LENGTH_LONG).show();
-
-
                 }
 
                 break;
@@ -76,9 +72,7 @@ public class Activity_inicio_sesion extends AppCompatActivity implements View.On
                 startActivity(i4);
                 finish();
                 break;
-
         }
-
     }
 
     @Override

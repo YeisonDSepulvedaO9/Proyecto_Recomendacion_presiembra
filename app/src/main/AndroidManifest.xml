@@ -21,16 +21,13 @@
             android:name=".registrar"
             android:exported="false"/>
         <activity
-            android:name=".Activity_menu"
-            android:exported="false"/>
-        <activity
             android:name=".Menu_consulta_reportes"
             android:exported="false"/>
         <activity
             android:name=".activity_realizar_recomendacion"
             android:exported="false"/>
         <activity
-            android:name=".Activity_inicio_sesion"
+            android:name=".Activity_menu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

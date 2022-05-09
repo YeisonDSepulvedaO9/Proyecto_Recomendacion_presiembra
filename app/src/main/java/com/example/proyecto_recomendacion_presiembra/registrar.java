@@ -52,7 +52,6 @@ public class registrar extends AppCompatActivity implements View.OnClickListener
 
       String [] opciones ={"papa","fresa","alverja"};
       ArrayAdapter <String> adapter1= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones);
-
       opcionesc.setAdapter(adapter1);
 
 

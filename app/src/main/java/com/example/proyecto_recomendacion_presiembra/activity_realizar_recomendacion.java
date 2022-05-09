@@ -20,6 +20,20 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+
+
 import java.util.Calendar;
 
 public class activity_realizar_recomendacion extends AppCompatActivity implements View.OnClickListener {
@@ -32,6 +46,12 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
     private View swit_GPS;
     private View view_switch;
     private LocationManager ubicacion;
+    double lati=0,longi=0;
+
+    private GoogleMap nMap;
+    private Marker marcador;
+    double lat=0.0, lng= 0.0;
+
 
 
     @Override
@@ -69,24 +89,43 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         TextView_lat = (TextView) findViewById(R.id.textView13);
         TextView_long = (TextView) findViewById(R.id.textView14);
     }
-// GPS PERMISOS
+
+//Prueba GPS
+    /*public void onMapReady(GoogleMap googleMap){
+        nMap=googleMap;
+    }
+    private void agrgarMarcador(double Latitud, double Longitud){
+        LatLng coordenadas= new LatLng(lat,lng);
+        CameraUpdate miUbicacion= CameraUpdateFactory.newLatLngZoom(coordenadas,16);
+        marcador=nMap.addMarker(new MarkerOptions()
+                .position(coordenadas)
+                .title("Posicion actual")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        nMap.animateCamera(miUbicacion);
+
+    }*/
+
+    // GPS PERMISOS
     public void localizacion() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
         }
-
         ubicacion = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        //Location loc = ubicacion.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         Location loc = ubicacion.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if(ubicacion!=null){
-            Log.d("Latitud",String.valueOf(loc.getLatitude()));
-            Log.d("Longitud",String.valueOf(loc.getLongitude()));
-            TextView_lat.setText(String.valueOf(loc.getLatitude()));
-            TextView_long.setText(String.valueOf(loc.getLongitude()));
+
+            lati=loc.getLatitude();
+            longi= loc.getLongitude();
+
+            Log.d("Latitud",String.valueOf(lati));
+            Log.d("Longitud",String.valueOf(longi));
+            TextView_lat.setText(String.valueOf(lati));
+            TextView_long.setText(String.valueOf(longi));
         }
     }
 
     //Validar shiwtch para activar GPS
-
     public void onClick_GPS(View view_switch) {
         this.view_switch = view_switch;
         if (view_switch.getId()==R.id.switch_GPS){

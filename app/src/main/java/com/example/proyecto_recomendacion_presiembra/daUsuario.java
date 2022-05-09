@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 
+
 public class daUsuario {
     Context c;
     usuario u;
@@ -19,9 +20,7 @@ public class daUsuario {
         sql = c.openOrCreateDatabase(bd, c.MODE_PRIVATE, null);
         sql.execSQL(tabla);
         u = new usuario();
-
     }
-
     public boolean insertarUsuario(usuario u) {
         if (buscar(u.getCorreo()) == 0) {
 
@@ -34,7 +33,6 @@ public class daUsuario {
             values.put("cultivo", u.getCultivo());
             return (sql.insert("usuario", null, values) > 0);
         } else {
-
             return false;
         }
     }
