@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/ET_recom_fecha"
+        android:id="@+id/txt_Fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
@@ -28,7 +28,7 @@
         android:layout_marginTop="6dp"
         android:text="Fecha"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/S_recom_cultivos" />
+        app:layout_constraintTop_toBottomOf="@+id/Rec_spinner_cultivos" />
 
     <TextView
         android:id="@+id/textView11"
@@ -38,10 +38,10 @@
         android:layout_marginTop="8dp"
         android:text="Cultivo de interés"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_recom_hectareas" />
+        app:layout_constraintTop_toBottomOf="@+id/EditText_hectareas" />
 
     <EditText
-        android:id="@+id/ET_recom_hectareas"
+        android:id="@+id/EditText_hectareas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -90,12 +90,12 @@
         android:id="@+id/calndar_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/ET_recom_fecha"
-        app:layout_constraintStart_toEndOf="@+id/ET_recom_fecha"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_Fecha"
+        app:layout_constraintStart_toEndOf="@+id/txt_Fecha"
         app:srcCompat="@android:drawable/ic_menu_today" />
 
     <Spinner
-        android:id="@+id/S_recom_municipios"
+        android:id="@+id/Reco_spinner_municipios"
         android:layout_width="213dp"
         android:layout_height="38dp"
         android:layout_marginStart="62dp"
@@ -106,7 +106,7 @@
 
 
     <Button
-        android:id="@+id/B_recom_proceso"
+        android:id="@+id/button"
         android:layout_width="189dp"
         android:layout_height="87dp"
         android:layout_marginTop="29dp"
@@ -129,10 +129,10 @@
         android:onClick="onClick_GPS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_recom_fecha" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Fecha" />
 
     <Spinner
-        android:id="@+id/S_recom_cultivos"
+        android:id="@+id/Rec_spinner_cultivos"
         android:layout_width="213dp"
         android:layout_height="38dp"
         android:layout_marginStart="62dp"

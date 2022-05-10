@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import android.os.Bundle;
-
 public class Activity_inicio_sesion extends AppCompatActivity implements View.OnClickListener {
 
     EditText inicio;

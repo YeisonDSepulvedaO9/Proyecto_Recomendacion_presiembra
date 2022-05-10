@@ -168,7 +168,7 @@
 
 
             <Spinner
-                android:id="@+id/cultivo_t"
+                android:id="@+id/cultivo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 

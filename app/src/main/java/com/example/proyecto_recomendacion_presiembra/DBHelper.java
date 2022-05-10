@@ -12,9 +12,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NOMBRE = "presiembra.db";
-    private static final String TABLA_REALIZAR_RECOMENDACION = "realizar_recomendacion.db";
-    private static final String TABLA_CULTIVOS = "cultivos.db";
-    private static final String TABLA_CORRDENADAS = "coordenadas.db";
+    private static final String TABLA_REALIZAR_RECOMENDACION = "realizar_recomendacion";
+    private static final String TABLA_CULTIVOS = "cultivos";
+    private static final String TABLA_CORRDENADAS = "coordenadas";
 
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null,DATABASE_VERSION );
@@ -29,10 +29,19 @@ public class DBHelper extends SQLiteOpenHelper {
                 "cultivo_r TEXT not null," +
                 "fecha TEXT not null)");
 
+        DB.execSQL("create Table "+ TABLA_CULTIVOS +"(" +
+                "idrecomendacion TEXT primary key, " +
+                "municipio TEXT not null, " +
+                "hectareas TEXT not null, " +
+                "cultivo_r TEXT not null," +
+                "fecha TEXT not null)");
+
     }
     @Override
-    public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase DB, int i, int ii) {
         DB.execSQL("drop Table if exists "+ TABLA_REALIZAR_RECOMENDACION);
+        DB.execSQL("drop Table if exists "+ TABLA_CULTIVOS);
+
     }
 
     public Boolean insertuserdata(String idrecomendacion, String municipio, String hectareas, String cultivo_r, String fecha)
@@ -52,7 +61,6 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-
 
     public Boolean updateuserdata(String idrecomendacion, String municipio, String hectareas, String cultivo_r, String fecha)
     {
@@ -101,6 +109,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 }
+
 
 
 

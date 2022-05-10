@@ -16,7 +16,7 @@ public class Reporte_Recomendacion extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reporte_recomendacion);
-        volver2=(Button) findViewById(R.id.volver2);
+        volver2=(Button) findViewById(R.id.volver);
         volver2.setOnClickListener(this);
 
 

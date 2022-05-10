@@ -15,7 +15,7 @@ public class registrar extends AppCompatActivity implements View.OnClickListener
 
    EditText usuario_registrar, contrasena_registar, contrasenaconfirmacion_registar, nombre_r;
 
-   Spinner Opcion,opcionesc;
+    Spinner Opcion,opcionesc;
    Button registrarse;
    Button volver;
    daUsuario dao;
@@ -24,14 +24,13 @@ public class registrar extends AppCompatActivity implements View.OnClickListener
    public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_registrar);
-
       usuario_registrar=(EditText)findViewById(R.id.usuario_registrar);
       contrasena_registar=(EditText)findViewById(R.id.contrasena_registar);
       contrasenaconfirmacion_registar=(EditText)findViewById(R.id.contrasenaconfirmacion_registar);
       nombre_r=(EditText)findViewById(R.id.nombre_r);
 
       Opcion =(Spinner)findViewById(R.id.municipio);
-      opcionesc=(Spinner)findViewById(R.id.cultivo_t);
+      opcionesc=(Spinner)findViewById(R.id.cultivo);
 
       registrarse=(Button)findViewById(R.id.registrar);
       registrarse.setOnClickListener(this);
