@@ -5,63 +5,91 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
-    EditText name, contact, dob;
+    EditText idrecomendacion, hectareas,cultivo_r, fecha;
     Button insert, update, delete, view;
+    Spinner municipio;
     DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        name = findViewById(R.id.name);
-        contact = findViewById(R.id.contact);
-        dob = findViewById(R.id.dob);
+
+        idrecomendacion = findViewById(R.id.recomendacion_r);
+        municipio = findViewById(R.id.contact_municipio);
+        hectareas = findViewById(R.id.dob);
+        cultivo_r = findViewById(R.id.cultivo_t);
+        fecha = findViewById(R.id.fecha);
+
         insert = findViewById(R.id.btnInsert);
         update = findViewById(R.id.btnUpdate);
         delete = findViewById(R.id.btnDelete);
         view = findViewById(R.id.btnView);
+
         DB = new DBHelper(this);
+
+// Spinner
+        Spinner spinner_municipiosrr = findViewById(R.id.contact_municipio);
+        ArrayAdapter adapter_municipiosrr = ArrayAdapter.createFromResource(
+                this,
+                R.array.municipios,
+                android.R.layout.simple_spinner_item);
+        adapter_municipiosrr.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinner_municipiosrr.setAdapter(adapter_municipiosrr);
+
+        //INSERTAR
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nameTXT = name.getText().toString();
-                String contactTXT = contact.getText().toString();
-                String dobTXT = dob.getText().toString();
+                String recomenTXT = idrecomendacion.getText().toString();
+                String muciptTXT = spinner_municipiosrr.getSelectedItem().toString();;
+                String hectTXT = hectareas.getText().toString();
+                String cultTXT = cultivo_r.getText().toString();
+                String fechaTXT = fecha.getText().toString();
 
-                Boolean checkinsertdata = DB.insertuserdata(nameTXT, contactTXT, dobTXT);
+                Boolean checkinsertdata = DB.insertuserdata(recomenTXT, muciptTXT, hectTXT, cultTXT,fechaTXT);
                 if(checkinsertdata==true)
                     Toast.makeText(MainActivity.this, "Nueva entrada insertada", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, "Nueva entrada no insertada", Toast.LENGTH_SHORT).show();
             }        });
+
+        //ACTUALIZAR
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nameTXT = name.getText().toString();
-                String contactTXT = contact.getText().toString();
-                String dobTXT = dob.getText().toString();
+                String recomenTXT = idrecomendacion.getText().toString();
+                String muciptTXT = municipio.getSelectedItem().toString();
+                String hectTXT = hectareas.getText().toString();
+                String cultTXT = cultivo_r.getText().toString();
+                String fechaTXT = fecha.getText().toString();
 
-                Boolean checkupdatedata = DB.updateuserdata(nameTXT, contactTXT, dobTXT);
+                Boolean checkupdatedata = DB.updateuserdata(recomenTXT, muciptTXT, hectTXT,cultTXT, fechaTXT);
                 if(checkupdatedata==true)
                     Toast.makeText(MainActivity.this, "Entrada actualizada", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, "Nueva Entrada no actualizada", Toast.LENGTH_SHORT).show();
             }        });
+
+        //ELIMINAR
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nameTXT = name.getText().toString();
-                Boolean checkudeletedata = DB.deletedata(nameTXT);
+                String recomenTXT = idrecomendacion.getText().toString();
+                Boolean checkudeletedata = DB.deletedata(recomenTXT);
                 if(checkudeletedata==true)
                     Toast.makeText(MainActivity.this, "Entrada eliminada", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, "Entrada no eliminada", Toast.LENGTH_SHORT).show();
             }        });
 
+        //CONSULTAR
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,14 +100,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 StringBuffer buffer = new StringBuffer();
                 while(res.moveToNext()){
-                    buffer.append("Nombre :"+res.getString(0)+"\n");
-                    buffer.append("Contact :"+res.getString(1)+"\n");
-                    buffer.append("Date of Birth :"+res.getString(2)+"\n\n");
+                    buffer.append("Recomendacion :"+res.getString(0)+"\n");
+                    buffer.append("Municipio :"+res.getString(1)+"\n");
+                    buffer.append("Hectareas :"+res.getString(2)+"\n");
+                    buffer.append("Cultivo interés :"+res.getString(3)+"\n");
+                    buffer.append("Fecha :"+res.getString(4)+"\n\n");
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setCancelable(true);
-                builder.setTitle("User Entries");
+                builder.setTitle("Registros");
                 builder.setMessage(buffer.toString());
                 builder.show();
             }        });

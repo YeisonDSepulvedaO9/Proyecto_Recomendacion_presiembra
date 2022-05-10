@@ -27,7 +27,7 @@
             android:name=".activity_realizar_recomendacion"
             android:exported="false"/>
         <activity
-            android:name=".Activity_menu"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,119 +6,138 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/fondo_fin">
 
-    <TextView
-        android:id="@+id/texttitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="9dp"
-        android:text="Ingresa los siguientes datos"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+<ImageView
+    android:src="@drawable/fondo_fin"
+    android:scaleType="centerCrop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/texttitle"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="9dp"
-        android:hint="Nombre"
-        android:inputType="textPersonName"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texttitle" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/contact"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="9dp"
-        android:hint="Correo"
-        android:inputType="text"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/name" />
+        <LinearLayout
+            android:id="@+id/LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/dob"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/contact"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="9dp"
-        android:hint="Cultivo"
-        android:inputType="text"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact" />
+            <TextView
+                android:id="@+id/texttitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="9dp"
+                android:text="Ingresa los siguientes datos"
+                android:textSize="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnInsert"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/dob"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="9dp"
-        android:text="Insert New Data"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dob" />
+            <EditText
+                android:id="@+id/recomendacion_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/texttitle"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="9dp"
+                android:hint="Recomendacion"
+                android:inputType="textPersonName"
+                android:textSize="24dp" />
 
-    <Button
-        android:id="@+id/btnUpdate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnInsert"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="9dp"
-        android:text="Update Data"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnInsert" />
+            <Spinner
+                android:id="@+id/contact_municipio"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:textSize="24dp" />
 
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnUpdate"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="9dp"
-        android:text="Delete Existing Data"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LinearLayout"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="9dp"
+                android:background="@color/design_default_color_on_primary"
+                android:backgroundTint="@color/design_default_color_on_primary"
+                android:hint="Hectareas"
+                android:inputType="text"
+                android:textSize="24dp" />
 
-    <Button
-        android:id="@+id/btnView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnDelete"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="9dp"
-        android:text="View Data"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDelete" />
+            <EditText
+                android:id="@+id/cultivo_t"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LinearLayout"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="9dp"
+                android:hint="Cultivo"
+                android:inputType="text"
+                android:textSize="24dp" />
+
+            <EditText
+                android:id="@+id/fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LinearLayout"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="9dp"
+                android:hint="Fecha"
+                android:inputType="text"
+                android:textSize="24dp" />
+
+            <Button
+                android:id="@+id/btnInsert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dob"
+                android:layout_marginStart="9dp"
+                android:layout_marginEnd="9dp"
+                android:text="Insert New Data"
+                android:textSize="24dp" />
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnInsert"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="9dp"
+                android:text="Update Data"
+                android:textSize="24dp" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnUpdate"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="9dp"
+                android:text="Delete Existing Data"
+                android:textSize="24dp" />
+
+            <Button
+                android:id="@+id/btnView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnDelete"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="9dp"
+                android:text="View Data"
+                android:textSize="24dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
