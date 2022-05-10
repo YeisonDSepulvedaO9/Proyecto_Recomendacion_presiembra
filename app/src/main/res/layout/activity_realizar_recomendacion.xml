@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/txt_Fecha"
+        android:id="@+id/recom_txt_fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
@@ -28,7 +28,7 @@
         android:layout_marginTop="6dp"
         android:text="Fecha"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Rec_spinner_cultivos" />
+        app:layout_constraintTop_toBottomOf="@+id/recom_spinner_cultivos" />
 
     <TextView
         android:id="@+id/textView11"
@@ -38,10 +38,10 @@
         android:layout_marginTop="8dp"
         android:text="Cultivo de interés"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditText_hectareas" />
+        app:layout_constraintTop_toBottomOf="@+id/recom_txt_hectareas" />
 
     <EditText
-        android:id="@+id/EditText_hectareas"
+        android:id="@+id/recom_txt_hectareas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -67,7 +67,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="32dp"
         android:text="RECOMENDACIÓN"
@@ -90,12 +90,12 @@
         android:id="@+id/calndar_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_Fecha"
-        app:layout_constraintStart_toEndOf="@+id/txt_Fecha"
+        app:layout_constraintBottom_toBottomOf="@+id/recom_txt_fecha"
+        app:layout_constraintStart_toEndOf="@+id/recom_txt_fecha"
         app:srcCompat="@android:drawable/ic_menu_today" />
 
     <Spinner
-        android:id="@+id/Reco_spinner_municipios"
+        android:id="@+id/recom_spinner_municipio"
         android:layout_width="213dp"
         android:layout_height="38dp"
         android:layout_marginStart="62dp"
@@ -106,11 +106,12 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/recom_button_proceso"
         android:layout_width="189dp"
         android:layout_height="87dp"
         android:layout_marginTop="29dp"
         android:gravity="center|center_horizontal|center_vertical"
+        android:onClick="onClick_realizar_report"
         android:text="Recomendar"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,10 +130,10 @@
         android:onClick="onClick_GPS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Fecha" />
+        app:layout_constraintTop_toBottomOf="@+id/recom_txt_fecha" />
 
     <Spinner
-        android:id="@+id/Rec_spinner_cultivos"
+        android:id="@+id/recom_spinner_cultivos"
         android:layout_width="213dp"
         android:layout_height="38dp"
         android:layout_marginStart="62dp"
@@ -160,6 +161,26 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="58dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="19dp"
+        android:onClick="onClickConsul"
+        android:text="Button"
+        app:layout_constraintStart_toEndOf="@+id/recom_button_proceso"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

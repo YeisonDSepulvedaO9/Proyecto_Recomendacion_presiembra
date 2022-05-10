@@ -17,13 +17,15 @@ public class Activity_menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_realizar_reporte",null,1);
+
 
         // Boton para perfil
         boton_perfil= (Button) findViewById(R.id.ImButton_perfil);
         boton_perfil.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view_boton_perfil) {
-                Intent B_perf= new Intent(Activity_menu.this,Perfil.class);
+                Intent B_perf= new Intent(Activity_menu.this,MainActivity.class);
                 startActivity(B_perf);
             }
         });

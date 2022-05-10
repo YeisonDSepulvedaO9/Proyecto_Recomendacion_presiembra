@@ -5,33 +5,29 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
+import com.example.proyecto_recomendacion_presiembra.Utilidades.Utilidades;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
 
 
 import java.util.Calendar;
@@ -39,19 +35,21 @@ import java.util.Calendar;
 public class activity_realizar_recomendacion extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton boton_fecha;
-    EditText txt_fecha;
+    EditText txt_fecha,id;
     TextView TextView_lat, TextView_long;
     Switch switch_gps;
+
+    Button recom_proceso;
+    Spinner recom_municipios,recom_cultivos;
+    EditText recom_fecha, recom_hectareas;
+    ConexionSQLiteHelper conna,conne;
+
+
     private int dia, mes, año;
     private View swit_GPS;
     private View view_switch;
     private LocationManager ubicacion;
     double lati=0,longi=0;
-
-    private GoogleMap nMap;
-    private Marker marcador;
-    double lat=0.0, lng= 0.0;
-
 
 
     @Override
@@ -60,8 +58,19 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         setContentView(R.layout.activity_realizar_recomendacion);
 
 
+        recom_municipios= (Spinner) findViewById(R.id.recom_spinner_municipio);
+        recom_hectareas = (EditText) findViewById(R.id.recom_txt_hectareas);
+        recom_cultivos = (Spinner) findViewById(R.id.recom_spinner_cultivos);
+        recom_fecha = (EditText) findViewById(R.id.recom_txt_fecha);
+        recom_proceso= (Button) findViewById(R.id.recom_button_proceso);
+        id=(EditText) findViewById(R.id.id);
+
+
+
+
+
         //Spiner seleccionar municipio
-        Spinner spinner_municipios = findViewById(R.id.Reco_spinner_municipios);
+        Spinner spinner_municipios = findViewById(R.id.recom_spinner_municipio);
         ArrayAdapter adapter_municipios = ArrayAdapter.createFromResource(
                 this,
                 R.array.municipios,
@@ -70,7 +79,7 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         spinner_municipios.setAdapter(adapter_municipios);
 
         //Spiner seleccionar cultivos
-        Spinner spinner_cultivos = findViewById(R.id.Rec_spinner_cultivos);
+        Spinner spinner_cultivos = findViewById(R.id.recom_spinner_cultivos);
         ArrayAdapter adapter_cultivos = ArrayAdapter.createFromResource(
                 this,
                 R.array.cultivos,
@@ -81,7 +90,7 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         //Boton calendario
 
         boton_fecha = (ImageButton) findViewById(R.id.calndar_button);
-        txt_fecha = (EditText) findViewById(R.id.txt_Fecha);
+        txt_fecha = (EditText) findViewById(R.id.recom_txt_fecha);
         boton_fecha.setOnClickListener(this);
 
         //Switch
@@ -89,21 +98,25 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         TextView_lat = (TextView) findViewById(R.id.textView13);
         TextView_long = (TextView) findViewById(R.id.textView14);
     }
-
-//Prueba GPS
-    /*public void onMapReady(GoogleMap googleMap){
-        nMap=googleMap;
+    public void onClick_realizar_report(View view) {
+        registrarReporte();
     }
-    private void agrgarMarcador(double Latitud, double Longitud){
-        LatLng coordenadas= new LatLng(lat,lng);
-        CameraUpdate miUbicacion= CameraUpdateFactory.newLatLngZoom(coordenadas,16);
-        marcador=nMap.addMarker(new MarkerOptions()
-                .position(coordenadas)
-                .title("Posicion actual")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
-        nMap.animateCamera(miUbicacion);
+        private void registrarReporte() {
 
-    }*/
+        conne=new ConexionSQLiteHelper(this,"bd_realizar_a1",null,1);
+        SQLiteDatabase sqDB=conne.getWritableDatabase();
+
+        ContentValues values=new ContentValues();
+        values.put(Utilidades.CAMPO_MUNICIPIO,recom_municipios.getSelectedItem().toString());
+        values.put(Utilidades.CAMPO_HECTAREAS,recom_hectareas.getText().toString());
+        values.put(Utilidades.CAMPO_CULTIVO_INTERES,recom_cultivos.getSelectedItem().toString());
+        values.put(Utilidades.CAMPO_FECHA,recom_fecha.getText().toString());
+
+        Long idResultante=sqDB.insert(Utilidades.TABLA_REGISTRO,Utilidades.CAMPO_ID_RE_REPORTE,values);
+        Toast.makeText(getApplicationContext(),"Id Registro: "+idResultante,Toast.LENGTH_SHORT).show();
+        sqDB.close();
+    }
+
 
     // GPS PERMISOS
     public void localizacion() {
@@ -153,5 +166,8 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
             datePickerDialog.show();
         }
     }
+
+
+
 }
 

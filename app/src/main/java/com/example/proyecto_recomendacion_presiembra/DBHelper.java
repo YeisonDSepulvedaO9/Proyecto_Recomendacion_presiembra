@@ -13,23 +13,28 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NOMBRE = "presiembra.db";
     private static final String TABLA_REALIZAR_RECOMENDACION = "realizar_recomendacion";
-    private static final String TABLA_CULTIVOS = "cultivos";
-    private static final String TABLA_CORRDENADAS = "coordenadas";
+    private static final String TABLA_MUNICIPIOS = "municipios";
+    private static final String TABLA_CULTIVOS = "cultivos_infon";
+    private static final String TABLA_REPORTE = "reporte_recomendacion";
+
 
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null,DATABASE_VERSION );
     }
     @Override
-    public void onCreate(SQLiteDatabase DB) {
+    public void onCreate(SQLiteDatabase DBR) {
 
-        DB.execSQL("create Table "+ TABLA_REALIZAR_RECOMENDACION +"(" +
+        DBR.execSQL("create Table "+ TABLA_REALIZAR_RECOMENDACION +"(" +
                 "idrecomendacion TEXT primary key, " +
                 "municipio TEXT not null, " +
                 "hectareas TEXT not null, " +
                 "cultivo_r TEXT not null," +
                 "fecha TEXT not null)");
 
-        DB.execSQL("create Table "+ TABLA_CULTIVOS +"(" +
+            }
+    public void onCreateM(SQLiteDatabase DBM) {
+
+        DBM.execSQL("create Table "+ TABLA_MUNICIPIOS +"(" +
                 "idrecomendacion TEXT primary key, " +
                 "municipio TEXT not null, " +
                 "hectareas TEXT not null, " +
@@ -38,11 +43,24 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
     @Override
-    public void onUpgrade(SQLiteDatabase DB, int i, int ii) {
-        DB.execSQL("drop Table if exists "+ TABLA_REALIZAR_RECOMENDACION);
-        DB.execSQL("drop Table if exists "+ TABLA_CULTIVOS);
+    public void onUpgrade(SQLiteDatabase DBR, int i, int ii) {
+        DBR.execSQL("drop Table if exists "+ TABLA_REALIZAR_RECOMENDACION);
+    }
+    public void onUpgrade2(SQLiteDatabase DBM, int i, int ii) {
+        DBM.execSQL("drop Table if exists "+ TABLA_MUNICIPIOS);
 
     }
+    public void onUpgrade3(SQLiteDatabase DBF, int i, int ii) {
+        DBF.execSQL("drop Table if exists "+ TABLA_MUNICIPIOS);
+
+    }
+
+
+
+
+
+
+
 
     public Boolean insertuserdata(String idrecomendacion, String municipio, String hectareas, String cultivo_r, String fecha)
     {

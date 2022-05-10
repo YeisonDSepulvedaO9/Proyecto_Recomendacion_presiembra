@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     EditText idrecomendacion, hectareas,cultivo_r, fecha;
     Button insert, update, delete, view;
     Spinner municipio;
-    DBHelper DB;
+    DBHelper DBR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         delete = findViewById(R.id.btnDelete);
         view = findViewById(R.id.btnView);
 
-        DB = new DBHelper(this);
+        DBR = new DBHelper(this);
 
 // Spinner
         Spinner spinner_municipiosrr = findViewById(R.id.contact_municipio);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 String cultTXT = cultivo_r.getText().toString();
                 String fechaTXT = fecha.getText().toString();
 
-                Boolean checkinsertdata = DB.insertuserdata(recomenTXT, muciptTXT, hectTXT, cultTXT,fechaTXT);
+                Boolean checkinsertdata = DBR.insertuserdata(recomenTXT, muciptTXT, hectTXT, cultTXT,fechaTXT);
                 if(checkinsertdata==true)
                     Toast.makeText(MainActivity.this, "Nueva entrada insertada", Toast.LENGTH_SHORT).show();
                 else
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 String cultTXT = cultivo_r.getText().toString();
                 String fechaTXT = fecha.getText().toString();
 
-                Boolean checkupdatedata = DB.updateuserdata(recomenTXT, muciptTXT, hectTXT,cultTXT, fechaTXT);
+                Boolean checkupdatedata = DBR.updateuserdata(recomenTXT, muciptTXT, hectTXT,cultTXT, fechaTXT);
                 if(checkupdatedata==true)
                     Toast.makeText(MainActivity.this, "Entrada actualizada", Toast.LENGTH_SHORT).show();
                 else
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String recomenTXT = idrecomendacion.getText().toString();
-                Boolean checkudeletedata = DB.deletedata(recomenTXT);
+                Boolean checkudeletedata = DBR.deletedata(recomenTXT);
                 if(checkudeletedata==true)
                     Toast.makeText(MainActivity.this, "Entrada eliminada", Toast.LENGTH_SHORT).show();
                 else
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor res = DB.getdata();
+                Cursor res = DBR.getdata();
                 if(res.getCount()==0){
                     Toast.makeText(MainActivity.this, "No existe ese registro", Toast.LENGTH_SHORT).show();
                     return;

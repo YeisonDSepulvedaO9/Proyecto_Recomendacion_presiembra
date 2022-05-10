@@ -12,9 +12,7 @@
         android:roundIcon="@mipmap/ic_index_a"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Recomendacion_presiembra">
-        <activity
-            android:name=".Activitys.MainActivityAA"
-            android:exported="false" />
+
         <activity
             android:name=".Reporte_Recomendacion"
             android:exported="false" />
@@ -28,14 +26,13 @@
             android:name=".Menu_consulta_reportes"
             android:exported="false" />
         <activity
-            android:name=".activity_realizar_recomendacion"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity_realizar_recomendacion"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
