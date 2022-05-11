@@ -164,6 +164,7 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
                 }
             },año,mes,dia);
             datePickerDialog.show();
+            datePickerDialog.getDatePicker().setMinDate(calendario.getTimeInMillis());
         }
     }
 

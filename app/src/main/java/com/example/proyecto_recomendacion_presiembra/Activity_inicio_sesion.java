@@ -48,10 +48,10 @@ public class Activity_inicio_sesion extends AppCompatActivity implements View.On
                 } else if (dao.login(u, p) == 1) {
                     usuario ux = dao.getUsuario(u, p);
                     Toast.makeText(this, "Datos correctos , bienvenido", Toast.LENGTH_LONG).show();
-                    Intent i3 = new Intent(Activity_inicio_sesion.this, Reporte_Recomendacion.class);
+                    Intent i3 = new Intent(Activity_inicio_sesion.this, Activity_menu.class);
                     i3.putExtra("id", ux.getId());
                     startActivity(i3);
-                    finish();
+
                 } else {
                     Toast.makeText(this, "Usuario y/o contraseña incorrecta", Toast.LENGTH_LONG).show();
                 }
@@ -66,10 +66,11 @@ public class Activity_inicio_sesion extends AppCompatActivity implements View.On
 
 
             case R.id.invitado:
-                Intent i4 = new Intent(Activity_inicio_sesion.this, Reporte_Recomendacion.class);
+                Intent i4 = new Intent(Activity_inicio_sesion.this, registrar.class);
                 startActivity(i4);
                 finish();
                 break;
+
         }
     }
 

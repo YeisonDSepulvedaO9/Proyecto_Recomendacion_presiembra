@@ -2,12 +2,46 @@ package com.example.proyecto_recomendacion_presiembra.Utilidades;
 
 public class Utilidades {
 
-    //Constantes campos tabla realizar reporte
+
+    //Constantes campos tabla usuario
+    public static final String TABLA_USUARIO="Usuario";
+    public static final String CAMPO_ID_USUARIO="id_usuario";
+    public static final String CAMPO_CORREO="correo";
+    public static final String CAMPO_NOMBRE_USUARIO="nom_usuario";
+    public static final String CAMPO_CULTIVO_INTERES="cultivo_int";
+
+
+    public static final String CREAR_TABLA_USUARIO="CREATE TABLE " +
+            ""+TABLA_USUARIO+"("+CAMPO_ID_USUARIO+" " +
+            "INTEGER AUTOINCREMENT, "+CAMPO_CORREO+" TEXT PRIMARY KEY,"+CAMPO_NOMBRE_USUARIO+
+            " TEXT,"+CAMPO_CULTIVO_INTERES+" TEXT)";
+
+
+    //Constantes campos tabla cultivo
+    public static final String TABLA_CULTIVO="cultivos_informacion";
+    public static final String CAMPO_ID_CULTIVO="id_cultivo";
+    public static final String CAMPO_NOMBRE_CULTIVO="nombre_cultivo";
+    public static final String CAMPO_TIEMPO_CULTIVO="tiempo_cultivo";
+
+
+    public static final String CREAR_TABLA_CULTIVO="CREATE TABLE " +
+            ""+TABLA_CULTIVO+" ("+CAMPO_ID_CULTIVO+" INTEGER PRIMARY KEY AUTOINCREMENT, "
+            +CAMPO_NOMBRE_CULTIVO+" TEXT, "+CAMPO_TIEMPO_CULTIVO+ "INTEGER)";
+
+
+    //Contantes tabla usuario_cultivo
+
+    public static final String TABLA_USUARIO_CULTIVO="usuario_cultivos";
+
+        /*public static final String CREAR_TABLA_USUARIO_CULTIVO="CREATE TABLE " +
+            ""+TABLA_USUARIO_CULTIVO+" ("+CAMPO_ID_CULTIVO+" INTEGER AUTOINCREMENT, "
+            +CAMPO_NOMBRE_MASCOTA+" TEXT, "+CAMPO_RAZA_MASCOTA+" TEXT,"+CAMPO_ID_DUENIO+" INTEGER)";*/
+
+    //Constantes campos tabla realizar realizar reporte
     public static final String TABLA_REGISTRO="TABLA_REALIZAR_RECOMENDACIONO";
     public static final String CAMPO_ID_RE_REPORTE="id_report";
     public static final String CAMPO_MUNICIPIO="municipio";
     public static final String CAMPO_HECTAREAS="hectareas";
-    public static final String CAMPO_CULTIVO_INTERES="cultivo_int";
     public static final String CAMPO_FECHA="fecha_r";
 
     public static final String CREAR_TABLA_REGISTRO="CREATE TABLE " +
@@ -16,14 +50,5 @@ public class Utilidades {
             " TEXT,"+CAMPO_CULTIVO_INTERES+" TEXT,"+CAMPO_FECHA+" TEXT)";
 
 
-    /*Constantes campos tabla mascota
-    public static final String TABLA_MASCOTA="mascota";
-    public static final String CAMPO_ID_MASCOTA="id_mascota";
-    public static final String CAMPO_NOMBRE_MASCOTA="nombre_mascota";
-    public static final String CAMPO_RAZA_MASCOTA="raza_mascota";
-    public static final String CAMPO_ID_DUENIO="id_duenio";
 
-    public static final String CREAR_TABLA_MASCOTA="CREATE TABLE " +
-            ""+TABLA_MASCOTA+" ("+CAMPO_ID_MASCOTA+" INTEGER PRIMARY KEY AUTOINCREMENT, "
-            +CAMPO_NOMBRE_MASCOTA+" TEXT, "+CAMPO_RAZA_MASCOTA+" TEXT,"+CAMPO_ID_DUENIO+" INTEGER)";*/
 }

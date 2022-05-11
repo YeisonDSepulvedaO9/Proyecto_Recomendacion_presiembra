@@ -50,13 +50,9 @@ public class registrar extends AppCompatActivity implements View.OnClickListener
 
       //Rellenar spinner de cultivo
 
-      String [] opciones ={"papa","fresa","alverja"};
+      String [] opciones ={"Papa","Fresa","Arveja"};
       ArrayAdapter <String> adapter1= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones);
       opcionesc.setAdapter(adapter1);
-
-
-
-
 
 
    }
@@ -77,24 +73,21 @@ public class registrar extends AppCompatActivity implements View.OnClickListener
                Toast.makeText(this, "ERROR : campos vacios", Toast.LENGTH_LONG).show();
             }else if(dao.insertarUsuario(u)){
                Toast.makeText(this,"Registro Existoso !!!",Toast.LENGTH_LONG).show();
-
-
-               Intent i= new Intent(registrar.this,Reporte_Recomendacion.class );
+               Intent i= new Intent(registrar.this,Activity_inicio_sesion.class );
                startActivity(i);
-
+               finish();
 
             }else{
 
                Toast.makeText(this, "Usuario ya registrado !!", Toast.LENGTH_LONG).show();
             }
 
-
-
             break;
 
          case R.id.volver:
-            Intent i5= new Intent(registrar.this,Perfil.class );
+            Intent i5= new Intent(registrar.this, Activity_menu.class );
             startActivity(i5);
+            finish();
             break;
 
       }

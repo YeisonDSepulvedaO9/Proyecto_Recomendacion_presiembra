@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class Activity_menu extends AppCompatActivity {
+public class Activity_menu extends AppCompatActivity implements View.OnClickListener {
 
     Button boton_perfil,boton_recomendador,boton_histori_recomen,boton_salir;
 
@@ -16,9 +16,6 @@ public class Activity_menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
-        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_realizar_reporte",null,1);
-
 
         // Boton para perfil
         boton_perfil= (Button) findViewById(R.id.ImButton_perfil);
@@ -42,7 +39,7 @@ public class Activity_menu extends AppCompatActivity {
         });
 
         // Boton para hitorial recomendacion
-        boton_histori_recomen= (Button) findViewById(R.id.ImButton_historial);
+        boton_histori_recomen= (Button) findViewById(R.id.ImButton_historiala);
         boton_histori_recomen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view_boton_recomandador) {
@@ -50,6 +47,11 @@ public class Activity_menu extends AppCompatActivity {
                 startActivity(B_hist);
             }
         });
+
+    }
+
+    @Override
+    public void onClick(View view) {
 
     }
 }

@@ -1,117 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="25dp"
     android:orientation="vertical"
     android:background="@drawable/total"
     tools:context=".Activity_inicio_sesion">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="139dp"
-        app:srcCompat="@drawable/icono_principal"
-        />
-
-    <EditText
-        android:id="@+id/inicio_sesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-
-        android:layout_marginRight="30dp"
-        android:ems="10"
-        android:hint="@string/usuario"
-        android:inputType="textPersonName" />
-
-
-
-
-    <EditText
-        android:id="@+id/Password_sesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="@string/password"
-
-
-        android:layout_marginBottom="40dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"/>
-
-
-    <Button
-        android:id="@+id/sesion_i"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-
-
-         android:text="INICIAR SESION"
-        android:textColor="#F6F6F6"
-        android:textColorHighlight="#EDE1E1"
-        android:textColorHint="#E6DDDD"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"/>
-
-
 
     <Button
         android:id="@+id/re"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/sesion_i"
+        android:layout_marginTop="-1dp"
+        android:text="CREAR CUENTA" />
 
-        android:text="REGISTRO"
-        android:textColorHint="#EDE5E5"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"/>
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        android:layout_below="@+id/tvPleaseLogin"
+        android:layout_marginTop="19dp"
+        app:srcCompat="@drawable/brote" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvPleaseLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bienvenido"
+        android:textAlignment="center"
+        android:textColor="#BC2D2D"
+        android:textSize="34sp"
+        android:textStyle="bold|italic" />
 
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"/>
-
-    <LinearLayout
+    <EditText
+        android:id="@+id/inicio_sesion"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="24dp"
+        android:hint="Correo" />
 
+    <EditText
+        android:id="@+id/Password_sesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inicio_sesion"
+        android:layout_marginTop="12dp"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="24dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword" />
 
+    <Button
+        android:id="@+id/sesion_i"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Password_sesion"
+        android:layout_marginTop="20dp"
+        android:text="INICIAR SESIÓN" />
 
-        <Button
-            android:id="@+id/invitado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Invitado"
-            android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/invitado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/re"
+        android:layout_marginTop="51dp"
+        android:text="INVITADO" />
 
-
-</LinearLayout>
-
+</RelativeLayout>

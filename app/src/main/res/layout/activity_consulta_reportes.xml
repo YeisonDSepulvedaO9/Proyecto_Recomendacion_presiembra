@@ -7,92 +7,97 @@
     tools:context=".Menu_consulta_reportes"
     android:background="@drawable/total">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="412dp"
-                android:layout_height="56dp"
-                android:background="?attr/colorPrimary"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="108dp"
-                android:gravity="center"
-                android:text="REPORTE DE RECOMENDACIONES"
-                android:textColor="#BC2D2D"
-                android:textSize="34sp" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="373dp"
-                android:layout_height="117dp"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="12dp"
-                android:background="#9AAAA4A4"
-                android:text="A continuación encontraras todoas los pronosticos de recoemndacion. Seleccione el reporte que quieres visualizar:"
-                android:textSize="20sp" />
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="72dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="19dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="27dp"
-                    android:text="Arveja" />
-
-                <CheckBox
-                    android:id="@+id/checkBox2"
+                <TextView
+                    android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="26dp"
-                    android:text="Fresa" />
+                    android:layout_marginTop="108dp"
+                    android:gravity="center"
+                    android:text="REPORTE DE RECOMENDACIONES"
+                    android:textColor="#BC2D2D"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
 
-                <CheckBox
-                    android:id="@+id/checkBox3"
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="373dp"
+                    android:layout_height="117dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="#9AAAA4A4"
+                    android:text="A continuación encontraras todoas los pronosticos de recoemndacion. Seleccione el reporte que quieres visualizar:"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="27dp"
+                        android:text="Arveja" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="26dp"
+                        android:text="Fresa" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:text="Papa" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="19dp"
+                        android:text="Todos" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="229dp" />
+
+                <Button
+                    android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="6dp"
-                    android:text="Papa" />
-
-                <CheckBox
-                    android:id="@+id/checkBox4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="19dp"
-                    android:text="Todos" />
+                    android:layout_gravity="center"
+                    android:text="Regresar" />
 
             </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="229dp" />
-
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

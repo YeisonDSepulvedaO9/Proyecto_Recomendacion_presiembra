@@ -4,15 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1945" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.2115" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2115" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.1" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2115" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1945" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/drawable/paleta_fondo.xml" value="0.111" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/drawable/splash_principalmenu.xml" value="0.1945" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_consulta_reportes.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_inicio_sesion.xml" value="0.22" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_main2.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_main_.xml" value="0.22" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_main_aa.xml" value="0.1" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_maps.xml" value="0.20380434782608695" />
-        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_menu.xml" value="0.22" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_menu.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_menu_consulta_reportes.xml" value="0.25" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_menu_recomendacion.xml" value="0.1" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_menua.xml" value="0.1" />
@@ -20,9 +26,12 @@
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_perfil.xml" value="0.25" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_real_recomendacion.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_realizar_recomendacion.xml" value="0.25" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_regi.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_registrar.xml" value="0.25" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/activity_reporte_recomendacion.xml" value="0.25" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/antivity_recomendacion.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/log.xml" value="0.25" />
+        <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/logi.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/layout/my_row.xml" value="0.33" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/mipmap-anydpi-v26/ic_index.xml" value="0.1" />
         <entry key="..\:/Users/samio/AndroidStudioProjects/Proyecto_Recomendacion_presiembra/app/src/main/res/mipmap-anydpi-v26/ic_index_a.xml" value="0.1" />

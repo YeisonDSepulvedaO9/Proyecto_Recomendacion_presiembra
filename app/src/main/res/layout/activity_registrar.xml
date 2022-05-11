@@ -1,209 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/total"
     android:orientation="vertical"
+    android:padding="25dp"
     tools:context=".registrar">
-
-        <ImageView
-        android:id="@+id/icono_g"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-
-        app:srcCompat="@drawable/icono_principal"
-        />
-
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-
-
+            android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/correo_g"
+                android:id="@+id/tvPleaseCreateAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Correo"
+                android:text="Registro"
+                android:textAlignment="center"
+                android:textColor="#BC2D2D"
+                android:textSize="34sp"
+                android:textStyle="bold" />
 
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>/>
+            <ImageView
+                android:id="@+id/icono_g3"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
 
+                android:layout_marginTop="19dp"
+                app:srcCompat="@drawable/brote" />
 
             <EditText
                 android:id="@+id/usuario_registrar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:ems="20"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
-
-            <TextView
-                android:id="@+id/contraseña_g"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="contraseña"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawablePadding="24dp"
+                android:hint="Correo" />
 
             <EditText
                 android:id="@+id/contrasena_registar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:ems="20"
-                android:inputType="textPassword"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"
-                />
-
-
-            <TextView
-                android:id="@+id/repetir_g"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="repetir contraseña"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="24dp"
+                android:hint="Contraseña"
+                android:inputType="textPassword" />
 
             <EditText
                 android:id="@+id/contrasenaconfirmacion_registar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:ems="20"
-                android:inputType="textPassword"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
-            <TextView
-                android:id="@+id/Nombre_g"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombre"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
-
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="24dp"
+                android:hint="Repetir contraseña"
+                android:inputType="textPassword" />
 
             <EditText
                 android:id="@+id/nombre_r"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"
-                />
-
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawablePadding="24dp"
+                android:hint="Nombre" />
 
             <TextView
-                android:id="@+id/municipio_g"
-                android:layout_width="match_parent"
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="elige municipio"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="12dp"
+                android:text="Municipio" />
+
             <Spinner
                 android:id="@+id/municipio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:text="municipio"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
-
-
-
-
+                android:layout_marginTop="12dp"
+                android:scrollbarSize="12dp"
+                android:spinnerMode="dropdown" />
 
             <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Elige el cultivo de preferencia"
-
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
-
+                android:layout_marginTop="12dp"
+                android:text="Cultivo de interes" />
 
             <Spinner
                 android:id="@+id/cultivo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
-
+                android:layout_marginTop="12dp" />
 
             <Button
                 android:id="@+id/registrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Registrarse"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="20dp"
+                android:text="REGISTRARSE" />
 
             <Button
                 android:id="@+id/volver"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Volver "
+                android:layout_width="372dp"
+                android:layout_height="47dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"/>
-
+                android:layout_weight="0"
+                android:text="Volver " />
 
         </LinearLayout>
-
     </ScrollView>
 
-
-</LinearLayout>
+</RelativeLayout>
