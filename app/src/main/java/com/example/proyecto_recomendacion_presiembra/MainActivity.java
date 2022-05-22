@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     Spinner municipio;
     DBHelper DBR;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
                     buffer.append("Cultivo interés :"+res.getString(3)+"\n");
                     buffer.append("Fecha :"+res.getString(4)+"\n\n");
                 }
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setCancelable(true);
                 builder.setTitle("Registros");

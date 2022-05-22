@@ -12,19 +12,42 @@
         android:roundIcon="@mipmap/ic_index_a"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Recomendacion_presiembra">
-        <activity android:name=".Reporte_Recomendacion" />
-        <activity android:name=".Perfil" />
-        <activity android:name=".registrar" />
-        <activity android:name=".Menu_consulta_reportes" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".activity_realizar_recomendacion" />
-        <activity android:name=".Activity_menu" />
+        <activity
+            android:name=".menu_papa"
+            android:exported="false" />
+        <activity
+            android:name=".splash"
+            android:exported="false" />
+        <activity
+            android:name=".menu_re"
+            android:exported="false" />
+        <activity
+            android:name=".menu_fresa"
+            android:exported="false" />
+        <activity
+            android:name=".menu_arveja"
+            android:exported="false" />
+        <activity android:name=".Reporte_Recomendacion"
+            android:exported="false" />
+        <activity android:name=".Perfil"
+            android:exported="false" />
+        <activity android:name=".registrar"
+            android:exported="false" />
+        <activity android:name=".Menu_consulta_reportes"
+            android:exported="false" />
+        <activity android:name=".MainActivity"
+            android:exported="false" />
+        <activity android:name=".activity_realizar_recomendacion"
+            android:exported="false" />
+        <activity android:name=".Activity_menu"
+            android:exported="false" />
         <activity
             android:name=".Activity_inicio_sesion"
             android:exported="true"
             android:label="Menu principal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

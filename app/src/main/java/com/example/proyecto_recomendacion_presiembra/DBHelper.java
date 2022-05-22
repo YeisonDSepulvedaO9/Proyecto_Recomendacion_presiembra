@@ -50,12 +50,6 @@ public class DBHelper extends SQLiteOpenHelper {
         DBM.execSQL("drop Table if exists "+ TABLA_MUNICIPIOS);
 
     }
-    public void onUpgrade3(SQLiteDatabase DBF, int i, int ii) {
-        DBF.execSQL("drop Table if exists "+ TABLA_MUNICIPIOS);
-
-    }
-
-
 
 
 

@@ -8,7 +8,6 @@ import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationManager;
@@ -26,8 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyecto_recomendacion_presiembra.Utilidades.Utilidades;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.Marker;
+
 
 
 import java.util.Calendar;
@@ -63,10 +61,6 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         recom_cultivos = (Spinner) findViewById(R.id.recom_spinner_cultivos);
         recom_fecha = (EditText) findViewById(R.id.recom_txt_fecha);
         recom_proceso= (Button) findViewById(R.id.recom_button_proceso);
-        id=(EditText) findViewById(R.id.id);
-
-
-
 
 
         //Spiner seleccionar municipio
@@ -160,15 +154,11 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
                 @Override
                 public void onDateSet(DatePicker view, int año, int mes_año, int dia) {
                     txt_fecha.setText(dia+"-"+(mes_año+1)+"-"+año);
-
                 }
             },año,mes,dia);
             datePickerDialog.show();
             datePickerDialog.getDatePicker().setMinDate(calendario.getTimeInMillis());
         }
     }
-
-
-
 }
 

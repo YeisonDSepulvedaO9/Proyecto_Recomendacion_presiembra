@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_realizar_recomendacion"
-    android:background="@drawable/total">
+    android:background="@drawable/total"
+    tools:context=".activity_realizar_recomendacion">
 
 
     <EditText
@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginTop="4dp"
+        android:background="@color/proyecto_4"
         android:ems="10"
         android:hint="dd-mm-aaa"
         android:inputType="textPersonName"
@@ -27,6 +28,7 @@
         android:layout_marginStart="31dp"
         android:layout_marginTop="6dp"
         android:text="Fecha"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recom_spinner_cultivos" />
 
@@ -37,14 +39,16 @@
         android:layout_marginStart="31dp"
         android:layout_marginTop="8dp"
         android:text="Cultivo de interés"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recom_txt_hectareas" />
 
     <EditText
         android:id="@+id/recom_txt_hectareas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="218dp"
+        android:layout_height="27dp"
         android:layout_marginTop="4dp"
+        android:background="@color/proyecto_4"
         android:ems="10"
         android:hint="Ejm: 5"
         android:inputType="number"
@@ -60,6 +64,7 @@
         android:layout_marginStart="31dp"
         android:layout_marginTop="57dp"
         android:text="Hectaréas del terreno"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -71,7 +76,9 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="32dp"
         android:text="RECOMENDACIÓN"
+        android:textColor="#BC2D2D"
         android:textSize="34sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="parent" />
@@ -83,6 +90,7 @@
         android:layout_marginStart="31dp"
         android:layout_marginTop="32dp"
         android:text="Municipio"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -100,6 +108,8 @@
         android:layout_height="38dp"
         android:layout_marginStart="62dp"
         android:layout_marginTop="10dp"
+        android:background="@color/proyecto_4"
+        android:backgroundTint="#B0EAEAEA"
         android:spinnerMode="dropdown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -126,8 +136,8 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="152dp"
-        android:text="Activar GPS"
         android:onClick="onClick_GPS"
+        android:text="Activar GPS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recom_txt_fecha" />
@@ -138,6 +148,7 @@
         android:layout_height="38dp"
         android:layout_marginStart="62dp"
         android:layout_marginTop="4dp"
+        android:background="@color/proyecto_4"
         android:spinnerMode="dropdown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -161,26 +172,6 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <EditText
-        android:id="@+id/id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="58dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="19dp"
-        android:onClick="onClickConsul"
-        android:text="Button"
-        app:layout_constraintStart_toEndOf="@+id/recom_button_proceso"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,8 @@ public class reali_report implements Serializable {
     private String cultivo;
     private String fecha;
 
+
+
     public reali_report(Integer id_repote, String municipio, String hectareas, String cultivo, String fecha) {
         this.id_repote = id_repote;
         this.municipio = municipio;

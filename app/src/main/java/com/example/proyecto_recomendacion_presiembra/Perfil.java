@@ -19,6 +19,9 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
     daUsuario dao1;
     ListView lista;
 
+    daUsuario da;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
