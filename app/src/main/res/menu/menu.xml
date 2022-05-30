@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/general"
+        android:title="General" >
+        <menu >
+            <item
+                android:id="@+id/info_arve"
+                android:icon="@drawable/ic_baseline_person_24"
+                android:title="Arveja" />
+            <item
+                android:id="@+id/info_fresa"
+                android:icon="@android:drawable/ic_menu_agenda"
+                android:title="Fresa" />
+            <item
+                android:id="@+id/info_papa"
+                android:actionLayout="@layout/activity_certificado_fresa"
+                android:icon="@drawable/brote"
+                android:title="Papa"
+                android:visible="true" />
+            <item
+                android:id="@+id/histo_menb"
+                android:icon="@android:drawable/ic_menu_agenda"
+                android:title="Historial" />
+        </menu>
+    </item>
+</menu>

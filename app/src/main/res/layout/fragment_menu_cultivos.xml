@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondo_appi"
+    tools:context=".menu_cultivos">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <ImageButton
+                android:id="@+id/IB_arveja_c"
+                android:layout_width="400dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="#4CAF50"
+                android:radius="20dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/arveja" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <ImageButton
+                android:id="@+id/IB_fresa_c"
+                android:layout_width="400dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="#e55854"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/fresa" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <ImageButton
+                android:id="@+id/IB_papa_c"
+                android:layout_width="400dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="#534A2C"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/potato" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableLeft="?attr/homeAsUpIndicator"
+                android:text="menú principal"
+                android:textSize="20sp"
+                app:cornerRadius="18dp"
+                app:iconPadding="2dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

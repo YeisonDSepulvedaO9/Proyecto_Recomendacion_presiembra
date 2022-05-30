@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/total"
+    android:background="@drawable/fondo_appi"
     tools:context=".splash">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/IV_bienvenida"
         android:layout_width="378dp"
         android:layout_height="190dp"
         android:layout_centerVertical="true"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/bienv_splas" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/IV_logo"
         android:layout_width="197dp"
         android:layout_height="178dp"
         android:layout_centerHorizontal="true"

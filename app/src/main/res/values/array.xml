@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="fruits">
+        <item>Arveja</item>
+        <item>Fresa</item>
+        <item>Papa</item>
+    </array>
+
+    <array name="fruit_images">
+        <item>@drawable/arveja</item>
+        <item>@drawable/fresa</item>
+        <item>@drawable/arveja</item>
+    </array>
+
+
+
+</resources>

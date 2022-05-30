@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="25dp"
     android:orientation="vertical"
-    android:background="@drawable/total"
+    android:background="@drawable/fondo_appi"
     tools:context=".Activity_inicio_sesion">
 
     <Button
@@ -29,9 +29,9 @@
         android:id="@+id/tvPleaseLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bienvenido"
+        android:text="INICIA SESIÓN"
         android:textAlignment="center"
-        android:textColor="#BC2D2D"
+        android:textColor="#6c6f00"
         android:textSize="34sp"
         android:textStyle="bold|italic" />
 
@@ -71,5 +71,6 @@
         android:layout_below="@+id/re"
         android:layout_marginTop="51dp"
         android:text="INVITADO" />
+
 
 </RelativeLayout>

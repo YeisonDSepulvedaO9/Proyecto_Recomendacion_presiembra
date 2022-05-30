@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/total"
+    android:background="@drawable/fondo_appi"
     android:orientation="vertical"
     android:padding="25dp"
     tools:context=".registrar">
@@ -16,15 +16,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvPleaseCreateAccount"
+                android:id="@+id/titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Registro"
+                android:text="REGISTRO"
                 android:textAlignment="center"
-                android:textColor="#BC2D2D"
+                android:textColor="#6c6f00"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
@@ -32,15 +32,25 @@
                 android:id="@+id/icono_g3"
                 android:layout_width="match_parent"
                 android:layout_height="76dp"
-
                 android:layout_marginTop="19dp"
                 app:srcCompat="@drawable/brote" />
+
+            <EditText
+                android:id="@+id/nombre_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawablePadding="24dp"
+                android:hint="Nombre" />
 
             <EditText
                 android:id="@+id/usuario_registrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:background="@color/white"
                 android:drawableStart="@drawable/ic_baseline_email_24"
                 android:drawablePadding="24dp"
                 android:hint="Correo" />
@@ -50,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:background="@color/white"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="24dp"
                 android:hint="Contraseña"
@@ -60,47 +71,46 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:background="@color/white"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="24dp"
+                android:dropDownVerticalOffset="40dp"
                 android:hint="Repetir contraseña"
                 android:inputType="textPassword" />
-
-            <EditText
-                android:id="@+id/nombre_r"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:drawableStart="@drawable/ic_baseline_person_24"
-                android:drawablePadding="24dp"
-                android:hint="Nombre" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Municipio" />
+                android:text="Municipio ubicada la finca:"
+                android:textStyle="normal|bold" />
 
-            <Spinner
+            <com.example.proyecto_recomendacion_presiembra.CustomSpinner
                 android:id="@+id/municipio"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:layout_marginTop="12dp"
-                android:scrollbarSize="12dp"
-                android:spinnerMode="dropdown" />
+                android:background="@drawable/bg_spinner_fruit"
+                android:dropDownVerticalOffset="40dp"/>
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Cultivo de interes" />
+                android:text="Cultivo de interés"
+                android:textStyle="normal|bold" />
 
-            <Spinner
+
+            <com.example.proyecto_recomendacion_presiembra.CustomSpinner
                 android:id="@+id/cultivo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp" />
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_spinner_fruit"
+                android:dropDownVerticalOffset="40dp" />
+
 
             <Button
                 android:id="@+id/registrar"

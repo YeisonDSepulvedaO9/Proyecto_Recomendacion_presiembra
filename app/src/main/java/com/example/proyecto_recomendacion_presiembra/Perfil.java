@@ -8,18 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
-import java.util.ArrayList;
 
 
-public class Perfil extends AppCompatActivity implements View.OnClickListener {
+public class Perfil extends AppCompatActivity  {
 
     EditText nom, muni, cul;
     Button per;
-    daUsuario dao1;
     ListView lista;
 
-    daUsuario da;
+
 
 
 
@@ -27,31 +24,26 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
-        nom = findViewById(R.id.Nombre_registro);
-        muni = findViewById(R.id.Municipio_registro);
-        cul = findViewById(R.id.cultivo_registro);
 
-        per = (Button) findViewById(R.id.volver_p);
-        per.setOnClickListener(this);
-        dao1 = new daUsuario(this);
 
+        findViewById(R.id.titulo);
+        findViewById(R.id.textView28);
+        findViewById(R.id.fecha_regis);
+        findViewById(R.id.resgis_culti);
+
+
+
+        Button boton_perfil= (Button) findViewById(R.id.volver_perfil_menu);
+        boton_perfil.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view_boton_perfil) {
+                Intent B_perf= new Intent(Perfil.this, activity_menu_principal.class);
+                startActivity(B_perf);
+                finish();
+            }
+        });
 
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
 
-            case R.id.registrar:
-                //nom.setText();
-                String m = muni.getText().toString();
-                String c = cul.getText().toString();
-
-                break;
-
-
-
-
-        }
-    }
 }

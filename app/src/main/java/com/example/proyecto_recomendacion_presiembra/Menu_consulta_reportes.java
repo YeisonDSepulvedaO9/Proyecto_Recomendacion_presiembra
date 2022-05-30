@@ -24,7 +24,7 @@ public class Menu_consulta_reportes extends AppCompatActivity {
                 boton_regresar_menu.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view_boton_recomandador) {
-                                Intent B_regre_consul= new Intent(Menu_consulta_reportes.this,Activity_menu.class);
+                                Intent B_regre_consul= new Intent(Menu_consulta_reportes.this, activity_menu_principal.class);
                                 startActivity(B_regre_consul);
                         }
                 });

@@ -9,6 +9,6 @@ public class menu_arveja extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_arveja);
+        setContentView(R.layout.activity_certificado_arveja);
     }
 }

@@ -1,177 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/total"
-    tools:context=".activity_realizar_recomendacion">
+    android:background="@drawable/fondo_appi"
+    tools:context=".activity_realizar_recomendacion"
+    android:padding="25dp"
+    android:orientation="vertical">
 
 
-    <EditText
-        android:id="@+id/recom_txt_fecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/proyecto_4"
-        android:ems="10"
-        android:hint="dd-mm-aaa"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="6dp"
-        android:text="Fecha"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recom_spinner_cultivos" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="32dp"
+            android:text="RECOMENDACIÓN"
+            android:textColor="#BC2D2D"
+            android:textSize="34sp"
+            android:textStyle="bold|italic" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="8dp"
-        android:text="Cultivo de interés"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recom_txt_hectareas" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Municipio"
+            android:textStyle="bold|italic" />
 
-    <EditText
-        android:id="@+id/recom_txt_hectareas"
-        android:layout_width="218dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/proyecto_4"
-        android:ems="10"
-        android:hint="Ejm: 5"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        <Spinner
+            android:id="@+id/recom_spinner_municipio"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="8dp"
+            android:dropDownVerticalOffset="40dp"
+            android:background="@drawable/bg_spinner_fruit"
+            android:spinnerMode="dropdown" />
 
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Hectaréas del terreno que vas a sembrar"
+            android:textStyle="bold|italic" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="57dp"
-        android:text="Hectaréas del terreno"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        <EditText
+            android:id="@+id/recom_txt_hectareas"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:hint="Ejm: 5"
+            android:inputType="number" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="32dp"
-        android:text="RECOMENDACIÓN"
-        android:textColor="#BC2D2D"
-        android:textSize="34sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Cultivo de interés de mayor interés"
+            android:textStyle="bold|italic" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="32dp"
-        android:text="Municipio"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        <com.example.proyecto_recomendacion_presiembra.CustomSpinner
+            android:id="@+id/recom_spinner_cultivos"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_spinner_fruit"
+            android:dropDownVerticalOffset="40dp" />
 
-    <ImageButton
-        android:id="@+id/calndar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/recom_txt_fecha"
-        app:layout_constraintStart_toEndOf="@+id/recom_txt_fecha"
-        app:srcCompat="@android:drawable/ic_menu_today" />
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Fecha en la cual piensas sembrar"
+            android:textStyle="bold|italic" />
 
-    <Spinner
-        android:id="@+id/recom_spinner_municipio"
-        android:layout_width="213dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/proyecto_4"
-        android:backgroundTint="#B0EAEAEA"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <EditText
+                android:id="@+id/recom_txt_fecha"
+                android:layout_width="329dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:hint="dd-mm-aaa"
+                android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/recom_button_proceso"
-        android:layout_width="189dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="29dp"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:onClick="onClick_realizar_report"
-        android:text="Recomendar"
-        app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch_GPS" />
+            <ImageButton
+                android:id="@+id/calndar_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#6c6f00"
+                app:srcCompat="@android:drawable/ic_menu_today" />
+        </LinearLayout>
 
-    <Switch
-        android:id="@+id/switch_GPS"
-        android:layout_width="167dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="152dp"
-        android:onClick="onClick_GPS"
-        android:text="Activar GPS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recom_txt_fecha" />
+        <Switch
+            android:id="@+id/switch_GPS"
+            android:layout_width="167dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginEnd="152dp"
+            android:onClick="onClick_GPS"
+            android:background="#6c6f00"
+            android:text="Activar GPS" />
 
-    <Spinner
-        android:id="@+id/recom_spinner_cultivos"
-        android:layout_width="213dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/proyecto_4"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        <Button
+            android:id="@+id/recom_button_proceso"
+            android:layout_width="189dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="40dp"
+            android:text="Recomendar"
+            android:layout_marginStart="92dp"
+            android:layout_marginEnd="152dp"
+            app:cornerRadius="20dp" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="62dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/switch_GPS"
-        app:layout_constraintTop_toBottomOf="@+id/calndar_button" />
+        <TextView
+            android:id="@+id/coord"
+            android:layout_width="77dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="62dp" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="299dp"
-        android:layout_marginTop="11dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        <TextView
+            android:id="@+id/ubica"
+            android:layout_width="79dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="11dp" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,8 @@
 
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">#ffa040</item>
+        <item name="colorPrimaryVariant">#ff6f00</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -14,8 +14,15 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
-
     </style>
+
+    <style name="Theme.Proyecto_Recomendacion_presiembra.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Proyecto_Recomendacion_presiembra.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Proyecto_Recomendacion_presiembra.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

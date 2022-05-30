@@ -9,6 +9,6 @@ public class menu_fresa extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_fresa);
+        setContentView(R.layout.activity_certificado_fresa);
     }
 }

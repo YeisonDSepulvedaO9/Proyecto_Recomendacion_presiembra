@@ -1,5 +1,6 @@
 package com.example.proyecto_recomendacion_presiembra;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,14 +15,22 @@ public class Reporte_Recomendacion extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reporte_recomendacion);
-        volver2=(Button) findViewById(R.id.volver);
-        volver2.setOnClickListener(this);
+        setContentView(R.layout.activity_certificado_reporte);
+        //volver2=(Button) findViewById(R.id.volver);
+        //volver2.setOnClickListener(this);
+
+        String users= getIntent().getStringExtra("useraIni");
+        String correo= getIntent().getStringExtra("useraRego");
+        if(correo==null){
+             correo=users;
+        }
+
+        System.out.println("el correo inicio aaa. "+users);
+        System.out.println("el correo regis  aaa "+correo);
+
 
 
     }
-
-
 
     @Override
 
