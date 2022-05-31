@@ -64,7 +64,7 @@ public class activity_menu_principal extends AppCompatActivity {
         boton_histori_recomen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view_boton_recomandador) {
-                Intent B_hist= new Intent(activity_menu_principal.this,inicio.class);
+                Intent B_hist= new Intent(activity_menu_principal.this,MainActivity2.class);
                 startActivity(B_hist);
                 finish();
             }

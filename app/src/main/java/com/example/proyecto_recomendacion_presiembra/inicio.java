@@ -12,6 +12,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -44,7 +46,7 @@ public class inicio extends AppCompatActivity implements NavigationView.OnNaviga
 
         fragmentManager= getSupportFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.frgprincipal,new BlankFragment());
+        fragmentTransaction.add(R.id.frgprincipal,new menu_cultivos());
         fragmentTransaction.commit();
 
         navigationView.setNavigationItemSelectedListener(this);
@@ -57,25 +59,38 @@ public class inicio extends AppCompatActivity implements NavigationView.OnNaviga
 
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frgprincipal, new menu_cultivos());
+                fragmentTransaction.replace(R.id.frgprincipal, new arveja_menu_fragmento());
                 fragmentTransaction.commit();
                 break;
 
             case R.id.info_fresa:
 
-                Intent arveja_menu= new Intent(this,menu_arveja.class);
-                startActivity(arveja_menu);
-
-
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frgprincipal, new fresa_menu_fragment());
+                fragmentTransaction.commit();
                 break;
 
-            case R.id.histo_menb:
+            case R.id.info_papa:
 
-                fragmentManager= getSupportFragmentManager();
-                fragmentTransaction=fragmentManager.beginTransaction();
-                Intent B_perf= new Intent(this,Perfil.class);
-                startActivity(B_perf);
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frgprincipal, new papa_menu_fragment());
+                fragmentTransaction.commit();
+                break;
+
+            case R.id.info_menu:
+                Intent info_menu= new Intent(this, activity_menu_principal.class);
+                startActivity(info_menu);
                 finish();
+                break;
+
+            case R.id.info_recomendacion:
+                Intent info_recomendacion= new Intent(this, activity_realizar_recomendacion.class);
+                startActivity(info_recomendacion);
+                finish();
+                break;
+
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

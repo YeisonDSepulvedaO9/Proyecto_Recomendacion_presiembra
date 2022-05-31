@@ -84,9 +84,7 @@ public class Activity_inicio_sesion extends AppCompatActivity {
                     }
             }
         });
-
     }
-
     //Metodo validar sesion
     private void validar_sesion(String URL) {
         StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {

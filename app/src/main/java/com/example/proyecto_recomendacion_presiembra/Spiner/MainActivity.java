@@ -1,16 +1,17 @@
-package com.example.proyecto_recomendacion_presiembra;
+package com.example.proyecto_recomendacion_presiembra.Spiner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Spinner;
 
+import com.example.proyecto_recomendacion_presiembra.R;
 import com.example.proyecto_recomendacion_presiembra.inventory.Data;
 
 
-public class MainActivity extends AppCompatActivity implements CustomSpinner.OnSpinnerEventsListener{
+public class MainActivity extends AppCompatActivity implements CustomSpinner.OnSpinnerEventsListener {
 
     private CustomSpinner spinner_fruits;
-    private FruitAdapter adapter;
+    private CultivoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         spinner_fruits = findViewById(R.id.spinner_fruits);
         spinner_fruits.setSpinnerEventsListener(this);
 
-        adapter = new FruitAdapter(MainActivity.this, Data.getFruitList());
+        adapter = new CultivoAdapter(MainActivity.this, Data.getFruitList());
         spinner_fruits.setAdapter(adapter);
     }
 

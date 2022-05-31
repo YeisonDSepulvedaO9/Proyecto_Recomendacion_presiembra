@@ -1,99 +1,113 @@
 package com.example.proyecto_recomendacion_presiembra;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.ContentLoadingProgressBar;
 
 import android.content.Intent;
-import android.content.SyncStatusObserver;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.LayoutInflater;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
 import com.google.android.gms.common.util.ArrayUtils;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.*;
-import java.time.format.DateTimeFormatter;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Random;
 
 public class carga_porgressbar extends AppCompatActivity {
+
     int tiempo_carga;
     Date suma_fecha;
+    String fecha_final;
+    int dia, mes,años;
+
+
     String cultivo;
     String cutltiresu;
     String cultivofin;
+
     int cultivalor;
     String day,month,year;
     int papa,fresa,arveja;
     String culti_final;
+    int dias;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carga_porgressbar);
 
+
         TextView titulo1= findViewById(R.id.titulo1);
         TextView titulo2= findViewById(R.id.titulo2);
         TextView fondo= findViewById(R.id.fondotext);
+
+
         int tiempo_carga=0;
         tiempo_carga = (int)(Math.random()*4000+7000);
-        System.out.println("tiwmpo "+tiempo_carga);
+        System.out.println("tiwmpo carga" +
+                " "+tiempo_carga);
 
 
         String municipo= getIntent().getStringExtra("municipio_recom");
-        String hectarea= getIntent().getStringExtra("useraRego");
+        String hectarea= getIntent().getStringExtra("hectareas_recom");
         String cultivo= getIntent().getStringExtra("cultivo_recom");
         String fecha= getIntent().getStringExtra("fecha_recom");
 
-        int cultivalor=  Integer.parseInt(cultivo);
-        int hectareavalor=  Integer.parseInt(cultivo);
+/*
+        Proceso_recomendacion arveja_proceso= new Proceso_recomendacion(municipo,hectarea,cultivo,fecha,dias);
+        arveja_proceso.setCultivo(cultivo);
+        arveja_proceso.setMunicipio(municipo);
+        arveja_proceso.setHectareas(hectarea);
+        arveja_proceso.setFecha(fecha);
+        arveja_proceso.setDias(135);
+        try {
+            arveja_proceso.sumarDiasAFecha(fecha,135);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
+
+        Proceso_recomendacion fresa_proceso= new Proceso_recomendacion(municipo,hectarea,cultivo,fecha,dias);
+        fresa_proceso.setCultivo(cultivo);
+        fresa_proceso.setMunicipio(municipo);
+        fresa_proceso.setHectareas(hectarea);
+        fresa_proceso.setFecha(fecha);
+        fresa_proceso.setDias(135);
+
+        Proceso_recomendacion papa_proceso= new Proceso_recomendacion(municipo,hectarea,cultivo,fecha,dias);
+        papa_proceso.setCultivo(cultivo);
+        papa_proceso.setMunicipio(municipo);
+        papa_proceso.setHectareas(hectarea);
+        papa_proceso.setFecha(fecha);
+        papa_proceso.setDias(100);
+
+*/
 
         System.out.println("municipio "+municipo);
         System.out.println("hectares "+hectarea);
         System.out.println("cultivo "+cultivo);
         System.out.println("fecha "+fecha);
+        System.out.println(suma_fecha);
         String day="";
 
 
         int cultiselect = (int) (Math.random() * (3 - 1)) + 1;
         String date = fecha;
-        System.out.println(cultiselect);
-
 
         try {
-            sumarDiasAFecha(date, 120);
+            sumarDiasAFecha(date, 130);
         } catch (ParseException e) {
             e.printStackTrace();
         }
         findDate(date);
-        calculo(date,cultivalor,hectareavalor);
 
 
-         String cultiresu="";
-        if(cultiselect==1){
-            cutltiresu="Arveja";
-        }else if(cultiselect==2){
-            cutltiresu="Fresa";
-        }else{
-            cutltiresu="papa";
-            return;
-        }
 
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -111,29 +125,43 @@ public class carga_porgressbar extends AppCompatActivity {
             }
         },tiempo_carga);
     }
-    public static Date sumarDiasAFecha(String fecha, int dias) throws ParseException {
 
-        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+
+
+    public String sumarDiasAFecha(String fecha, int dias) throws ParseException {
+
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaActual = new Date();
         Date fecha_fin = formato.parse(fecha);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(fecha_fin);
         calendar.add(Calendar.DAY_OF_MONTH, dias);
-        Date suma_fecha= calendar.getTime();
+        suma_fecha= calendar.getTime();
         System.out.println("Suma es" + (suma_fecha));
-        return suma_fecha;
+
+
+        int año = calendar.get(Calendar.YEAR);
+        mes= calendar.get(Calendar.MONTH)+1;
+        int dia= calendar.get(Calendar.DAY_OF_MONTH);
+        String fecha_final=(dia+"/"+(mes+1)+"/"+año);
+        System.out.println(fecha_final);
+        return fecha_final;
+
+
+
     }
-    
+
 
     // Funcion obtener fecha
 
     public static void findDate(String date)
     {
         // Splitting the given date by '-'
-        String dateParts[] = date.split("-");
+        String dateParts[] = date.split("/");
         String daya = dateParts[0];
         String montha = dateParts[1];
         String yeara = dateParts[2];
+
 
 
         // Printing the day, month, and year
@@ -141,16 +169,19 @@ public class carga_porgressbar extends AppCompatActivity {
         System.out.println("Month: " + montha);
         System.out.println("Year: " + yeara);
 
-
-
     }
-int cuenta=0;
-    public void calculo(String date, int cultivalor,int hectareavalor){
 
-        String dateParts[] = date.split("-");
+
+    int cuenta=0;
+        public void calculo(String date, String cultivo ,String hectarea){
+
+        String dateParts[] = date.split("/");
         String day = dateParts[0];
         String month = dateParts[1];
         String year = dateParts[2];
+            System.out.println(" prueba de veracidada"+day);
+            System.out.println(" prueba de veracidada"+month);
+        System.out.println(" prueba de veracidada"+year);
 
 
 
@@ -196,13 +227,15 @@ int cuenta=0;
         String valor;
         int cuenta_a=0,cuenta_f=0,cuenta_p=0;
         ////Arveja
-                if(oaa==true ){
+        if(oaa==true ){
             System.out.println("alta "+month+"? \n"+oaa);
             cuenta_a=+1;
         }else if(oma== true){
             System.out.println("Media "+month+"? \n"+oma);
             cuenta_a=+2;
         }
+
+        System.out.println(suma_fecha);
 
         //Fresa
         if(oaf==true ){
@@ -223,6 +256,19 @@ int cuenta=0;
         }else if(oap==true){
             System.out.println("baja "+month+"? \n"+oap);
             cuenta_p=+3;
+        }
+
+
+        String recomendacion;
+
+        if(cuenta_a>cuenta_f&&cuenta_f>cuenta_p){
+            recomendacion="Arveja";
+
+        }else if(cuenta_f>cuenta_p && cuenta_p>cuenta_a){
+            System.out.print("Recomencionda fresa");
+            recomendacion="Arveja";
+        }else{
+            System.out.println("papa");
         }
 
 
@@ -251,6 +297,7 @@ int cuenta=0;
     public static boolean ofertabaja_papa(final String[] Bajapapa, final String month) {
         return ArrayUtils.contains(Bajapapa, month);
     }
+
 
 
 

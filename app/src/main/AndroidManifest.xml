@@ -14,22 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Recomendacion_presiembra"
         android:usesCleartextTraffic="true">
-
-
         <activity
-            android:name=".Cultivos"
+            android:name=".MainActivity2"
             android:exported="false" />
         <activity
             android:name=".carga_porgressbar"
-            android:exported="false" />
-        <activity
-            android:name=".menu_papa"
-            android:exported="false" />
-        <activity
-            android:name=".menu_fresa"
-            android:exported="false" />
-        <activity
-            android:name=".menu_arveja"
             android:exported="false" />
         <activity
             android:name=".Reporte_Recomendacion"
@@ -45,26 +34,34 @@
             android:exported="false" />
         <activity
             android:name=".activity_realizar_recomendacion"
-            android:label="Realizar recomendación"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Realizar recomendación" />
         <activity
             android:name=".splash"
             android:exported="false" />
         <activity
             android:name=".Activity_inicio_sesion"
             android:exported="false"
-            android:theme="@style/Theme.Proyecto_Recomendacion_presiembra.NoActionBar"/>
+            android:theme="@style/Theme.Proyecto_Recomendacion_presiembra.NoActionBar" />
         <activity
             android:name=".inicio"
-            android:theme="@style/Theme.Proyecto_Recomendacion_presiembra.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Proyecto_Recomendacion_presiembra.NoActionBar" />
+
+        <activity
+            android:name=".Consulta_recyclerview.activity.DetailActivity"
+            android:exported="false"/>
         <activity
             android:name=".activity_menu_principal"
+            android:exported="false"/>
+        <activity
+            android:name=".Consulta_recyclerview.activity.MainActivity_recycler"
+            android:layout_gravity="center"
             android:exported="true"
-            android:label="Menu principal"
-            android:layout_gravity="center">
+            android:label="Menu principal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -2,27 +2,36 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/general"
-        android:title="General" >
-        <menu >
+        android:id="@+id/culti_info"
+        android:title="Cultivos">
+        <menu>
             <item
                 android:id="@+id/info_arve"
-                android:icon="@drawable/ic_baseline_person_24"
+                android:icon="@drawable/arveja"
                 android:title="Arveja" />
             <item
                 android:id="@+id/info_fresa"
-                android:icon="@android:drawable/ic_menu_agenda"
+                android:icon="@drawable/fresa"
                 android:title="Fresa" />
             <item
                 android:id="@+id/info_papa"
-                android:actionLayout="@layout/activity_certificado_fresa"
-                android:icon="@drawable/brote"
+                android:icon="@drawable/potato"
                 android:title="Papa"
                 android:visible="true" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/general"
+        android:title="General">
+        <menu>
             <item
-                android:id="@+id/histo_menb"
+                android:id="@+id/info_menu"
                 android:icon="@android:drawable/ic_menu_agenda"
-                android:title="Historial" />
+                android:title="Menú principal" />
+            <item
+                android:id="@+id/info_recomendacion"
+                android:icon="@android:drawable/ic_menu_month"
+                android:title="Realizar recomendación" />
         </menu>
     </item>
 </menu>

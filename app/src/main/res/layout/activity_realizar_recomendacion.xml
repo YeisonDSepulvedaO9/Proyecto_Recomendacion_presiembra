@@ -70,7 +70,7 @@
             android:text="Cultivo de interés de mayor interés"
             android:textStyle="bold|italic" />
 
-        <com.example.proyecto_recomendacion_presiembra.CustomSpinner
+        <com.example.proyecto_recomendacion_presiembra.Spiner.CustomSpinner
             android:id="@+id/recom_spinner_cultivos"
             android:layout_width="match_parent"
             android:layout_height="34dp"
@@ -122,10 +122,11 @@
             android:id="@+id/recom_button_proceso"
             android:layout_width="189dp"
             android:layout_height="87dp"
-            android:layout_marginTop="40dp"
-            android:text="Recomendar"
             android:layout_marginStart="92dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="152dp"
+            android:onClick="onClickFinal"
+            android:text="Recomendar"
             app:cornerRadius="20dp" />
 
         <TextView

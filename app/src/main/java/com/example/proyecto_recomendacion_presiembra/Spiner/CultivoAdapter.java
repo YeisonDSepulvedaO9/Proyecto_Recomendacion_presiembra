@@ -1,4 +1,4 @@
-package com.example.proyecto_recomendacion_presiembra;
+package com.example.proyecto_recomendacion_presiembra.Spiner;
 
 
 import android.content.Context;
@@ -9,22 +9,23 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.proyecto_recomendacion_presiembra.inventory.Fruit;
+import com.example.proyecto_recomendacion_presiembra.R;
+import com.example.proyecto_recomendacion_presiembra.inventory.Cultivos;
 
 import java.util.List;
 
-public class FruitAdapter extends BaseAdapter {
+public class CultivoAdapter extends BaseAdapter {
     private Context context;
-    private List<Fruit> fruitList;
+    private List<Cultivos> cultivosList;
 
-    public FruitAdapter(Context context, List<Fruit> fruitList) {
+    public CultivoAdapter(Context context, List<Cultivos> cultivosList) {
         this.context = context;
-        this.fruitList = fruitList;
+        this.cultivosList = cultivosList;
     }
 
     @Override
     public int getCount() {
-        return fruitList != null ? fruitList.size() : 0;
+        return cultivosList != null ? cultivosList.size() : 0;
     }
 
     @Override
@@ -44,8 +45,8 @@ public class FruitAdapter extends BaseAdapter {
         TextView txtName = rootView.findViewById(R.id.name);
         ImageView image = rootView.findViewById(R.id.image);
 
-        txtName.setText(fruitList.get(i).getName());
-        image.setImageResource(fruitList.get(i).getImage());
+        txtName.setText(cultivosList.get(i).getName());
+        image.setImageResource(cultivosList.get(i).getImage());
 
         return rootView;
     }

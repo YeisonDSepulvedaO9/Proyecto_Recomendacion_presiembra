@@ -86,7 +86,7 @@
                 android:text="Municipio ubicada la finca:"
                 android:textStyle="normal|bold" />
 
-            <com.example.proyecto_recomendacion_presiembra.CustomSpinner
+            <com.example.proyecto_recomendacion_presiembra.Spiner.CustomSpinner
                 android:id="@+id/municipio"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -103,7 +103,7 @@
                 android:textStyle="normal|bold" />
 
 
-            <com.example.proyecto_recomendacion_presiembra.CustomSpinner
+            <com.example.proyecto_recomendacion_presiembra.Spiner.CustomSpinner
                 android:id="@+id/cultivo"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -117,6 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:onClick="onClick"
                 android:text="REGISTRARSE" />
 
             <Button

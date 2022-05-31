@@ -77,48 +77,48 @@ public class registrar extends AppCompatActivity {
          @Override
          public void onClick(View view_registrarse) {
 
-               String reg_nombre=nombre_r.getText().toString();
-               String reg_usuario=usuario_registrar.getText().toString();
-               String reg_contra=contrasena_registar.getText().toString();
-               String reg_contra_rep=contrasenaconfirmacion_registar.getText().toString();
-               String reg_muni=municipio_opcion.getSelectedItem().toString();
-               String reg_culti=cultivo_opti.getSelectedItem().toString();
+            String reg_nombre=nombre_r.getText().toString();
+            String reg_usuario=usuario_registrar.getText().toString();
+            String reg_contra=contrasena_registar.getText().toString();
+            String reg_contra_rep=contrasenaconfirmacion_registar.getText().toString();
+            String reg_muni=municipio_opcion.getSelectedItem().toString();
+            String reg_culti=cultivo_opti.getSelectedItem().toString();
 
 
             Usuario usera=new Usuario(ausuario,anombre);
-               usera.setNombre_usu(ausuario);
-               usera.setNombre_usu(anombre);
+            usera.setNombre_usu(ausuario);
+            usera.setNombre_usu(anombre);
 
 
 
             if(reg_usuario.isEmpty()|| reg_contra.isEmpty()|| reg_contra_rep.isEmpty()||reg_nombre.isEmpty()){
-                  Toast.makeText(getApplicationContext(),"Llenar todos los campos",Toast.LENGTH_LONG).show();
-               }else{
+               Toast.makeText(registrar.this,"Llenar todos los campos",Toast.LENGTH_LONG).show();
+            }else{
 
-                  if(validarnombre(reg_nombre)==true){
-                     Toast.makeText(getApplicationContext(),"Nombre no debe contener numeros",Toast.LENGTH_LONG).show();
-                  }else {
-                     if (reg_contra.length()<6){
-                        Toast.makeText(getApplicationContext(),"Contraseña debe ser de mas de 6",Toast.LENGTH_LONG).show();
+               if(validarnombre(reg_nombre)==true){
+                  Toast.makeText(registrar.this,"Nombre no debe contener numeros",Toast.LENGTH_LONG).show();
+               }else {
+                  if (reg_contra.length()<6){
+                     Toast.makeText(registrar.this,"Contraseña debe ser de mas de 6",Toast.LENGTH_LONG).show();
+                  }else{
+                     if(validarcontraseña(reg_contra)==true){
+                        Toast.makeText(registrar.this,"La contraselña debe tener numeros y letras",Toast.LENGTH_LONG).show();
                      }else{
-                        if(validarcontraseña(reg_contra)==true){
-                           Toast.makeText(getApplicationContext(),"La contraselña debe tener numeros y letras",Toast.LENGTH_LONG).show();
+                        if(reg_contra.equals(reg_contra_rep)){
+                           ejecutarServicio("http://192.168.0.10/proyecto_presiembra/register.php");
+                           Toast.makeText(registrar.this,"Registro exitoso",Toast.LENGTH_LONG).show();
+                           Intent registro= new Intent(registrar.this, activity_menu_principal.class);
+                           registro.putExtra("useraRego",reg_usuario);
+                           startActivity(registro);
+                           finish();
                         }else{
-                           if(reg_contra.equals(reg_contra_rep)){
-                              ejecutarServicio("http://192.168.0.10/proyecto_presiembra/register.php");
-                              Toast.makeText(getApplicationContext(),"Registro exitoso",Toast.LENGTH_LONG).show();
-                              Intent registro= new Intent(registrar.this, activity_menu_principal.class);
-                              registro.putExtra("useraRego",reg_usuario);
-                              startActivity(registro);
-                              finish();
-                           }else{
-                              Toast.makeText(getApplicationContext(),"la contraseña no coinciden",Toast.LENGTH_LONG).show();
-                           }
+                           Toast.makeText(registrar.this,"la contraseña no coinciden",Toast.LENGTH_LONG).show();
                         }
                      }
                   }
                }
             }
+         }
       });
 
       //Boton regresar inicio sesion
@@ -215,4 +215,3 @@ public class registrar extends AppCompatActivity {
 
    }
 }
-

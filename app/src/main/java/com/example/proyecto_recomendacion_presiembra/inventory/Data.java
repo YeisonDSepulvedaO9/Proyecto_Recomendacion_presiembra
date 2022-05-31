@@ -5,25 +5,24 @@ import java.util.List;
 
 public class Data {
 
-    public static List<Fruit> getFruitList() {
-        List<Fruit> fruitList = new ArrayList<>();
+    public static List<Cultivos> getFruitList() {
+        List<Cultivos> cultivosList = new ArrayList<>();
 
-        Fruit Avocado = new Fruit();
-        Avocado.setName("Arveja");
-        Avocado.setImage(R.drawable.arveja);
-        fruitList.add(Avocado);
+        Cultivos Arveja = new Cultivos();
+        Arveja.setName("Arveja");
+        Arveja.setImage(R.drawable.arveja);
+        cultivosList.add(Arveja);
 
-        Fruit Banana = new Fruit();
-        Banana.setName("Fresa");
-        Banana.setImage(R.drawable.fresa);
-        fruitList.add(Banana);
+        Cultivos Fresa = new Cultivos();
+        Fresa.setName("Fresa");
+        Fresa.setImage(R.drawable.fresa);
+        cultivosList.add(Fresa);
 
-        Fruit Coconut = new Fruit();
-        Coconut.setName("Papa");
-        Coconut.setImage(R.drawable.potato);
-        fruitList.add(Coconut);
-
-        return fruitList;
+        Cultivos Papa = new Cultivos();
+        Papa.setName("Papa");
+        Papa.setImage(R.drawable.potato);
+        cultivosList.add(Papa);
+        return cultivosList;
     }
 
     public static List<Municipios> getMunicipios() {

@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Spiner.MainActivity">
 
-    <com.example.proyecto_recomendacion_presiembra.CustomSpinner
+    <com.example.proyecto_recomendacion_presiembra.Spiner.CustomSpinner
         android:id="@+id/spinner_fruits"
         android:layout_width="348dp"
         android:layout_height="35dp"

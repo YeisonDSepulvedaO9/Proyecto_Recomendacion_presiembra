@@ -23,15 +23,17 @@
             android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bienvenido al menú principal"
-            android:textAlignment="center"
-            android:textColor="#6c6f00"
+            android:layout_gravity="center"
+            android:background="#BFFF9800"
+            android:text="¡Bienvenido(a)!"
+            android:textAlignment="gravity"
+            android:textColor="#534A2C"
             android:textSize="34sp"
             android:textStyle="normal|bold" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="40dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -40,7 +42,7 @@
 
             <ImageButton
                 android:id="@+id/ImButton_perfil"
-                android:layout_width="200dp"
+                android:layout_width="190dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"

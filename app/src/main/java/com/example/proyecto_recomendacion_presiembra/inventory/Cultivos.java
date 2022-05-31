@@ -1,12 +1,13 @@
 package com.example.proyecto_recomendacion_presiembra.inventory;
 import java.io.Serializable;
 
-public class Fruit implements Serializable {
+public class Cultivos implements Serializable {
+
 
     private String name;
     private int image;
 
-    public Fruit() {
+    public Cultivos() {
     }
 
     public String getName() {
