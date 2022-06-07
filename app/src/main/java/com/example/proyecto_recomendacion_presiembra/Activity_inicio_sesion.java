@@ -76,11 +76,20 @@ public class Activity_inicio_sesion extends AppCompatActivity {
                 user= user_correo.getText().toString();
                 passw=user_pass.getText().toString();
 
-                    if(!user.isEmpty() && !passw.isEmpty()){
+                if(user.isEmpty()){
+                    user_correo.setError("Ingresar correo");
+                    user_correo.requestFocus();
+                    return;
+                }
+                if(passw.isEmpty()){
+                    user_pass.setError("Ingresar correo");
+                    user_pass.requestFocus();
+                    return;
+                }
+                if(!user.isEmpty() && !passw.isEmpty()){
                         validar_sesion(URL_SERVIDOR);
-                    }
-                    else{
-                        Toast.makeText(Activity_inicio_sesion.this, "No se permiten campos vacios", Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(getApplicationContext(), "No se permiten espacios vacios, registrase o inicia sesión", Toast.LENGTH_LONG).show();
                     }
             }
         });
@@ -91,16 +100,18 @@ public class Activity_inicio_sesion extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(!response.isEmpty()){
-                    Intent intent_regis=new Intent(getApplicationContext(), activity_menu_principal.class);
-                    startActivity(intent_regis);
+                    Intent intent_logg=new Intent(Activity_inicio_sesion.this, activity_menu_principal.class);
+                    intent_logg.putExtra("usuario",intent_logg);
+                    Toast.makeText(getApplicationContext(),"Bienvenido",Toast.LENGTH_SHORT).show();
+                    startActivity(intent_logg);
                 }else{
-                    Toast.makeText(Activity_inicio_sesion.this,"INCORRECTA",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Usuario o contraseña incorrecta",Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Activity_inicio_sesion.this,error.toString(),Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(),"ERROR CONEXION URL UBICACION BASE DE DATOS: "+error.toString(),Toast.LENGTH_SHORT).show();
             }
         }){
             @Override

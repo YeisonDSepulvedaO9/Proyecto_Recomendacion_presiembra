@@ -92,27 +92,27 @@ public class registrar extends AppCompatActivity {
 
 
             if(reg_usuario.isEmpty()|| reg_contra.isEmpty()|| reg_contra_rep.isEmpty()||reg_nombre.isEmpty()){
-               Toast.makeText(registrar.this,"Llenar todos los campos",Toast.LENGTH_LONG).show();
+               Toast.makeText(getApplicationContext(),"Llenar todos los campos",Toast.LENGTH_LONG).show();
             }else{
 
                if(validarnombre(reg_nombre)==true){
-                  Toast.makeText(registrar.this,"Nombre no debe contener numeros",Toast.LENGTH_LONG).show();
+                  Toast.makeText(getApplicationContext(),"Nombre no debe contener numeros",Toast.LENGTH_LONG).show();
                }else {
                   if (reg_contra.length()<6){
-                     Toast.makeText(registrar.this,"Contraseña debe ser de mas de 6",Toast.LENGTH_LONG).show();
+                     Toast.makeText(getApplicationContext(),"Contraseña debe ser de mas de 6",Toast.LENGTH_LONG).show();
                   }else{
                      if(validarcontraseña(reg_contra)==true){
-                        Toast.makeText(registrar.this,"La contraselña debe tener numeros y letras",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"La contraseñña debe tener numeros y letras",Toast.LENGTH_LONG).show();
                      }else{
                         if(reg_contra.equals(reg_contra_rep)){
                            ejecutarServicio("http://192.168.0.10/proyecto_presiembra/register.php");
-                           Toast.makeText(registrar.this,"Registro exitoso",Toast.LENGTH_LONG).show();
+                           Toast.makeText(getApplicationContext(),"Registro exitoso",Toast.LENGTH_LONG).show();
                            Intent registro= new Intent(registrar.this, activity_menu_principal.class);
-                           registro.putExtra("useraRego",reg_usuario);
+                           registro.putExtra("usuario",reg_usuario);
                            startActivity(registro);
                            finish();
                         }else{
-                           Toast.makeText(registrar.this,"la contraseña no coinciden",Toast.LENGTH_LONG).show();
+                           Toast.makeText(getApplicationContext(),"la contraseña no coinciden",Toast.LENGTH_LONG).show();
                         }
                      }
                   }
@@ -137,7 +137,7 @@ public class registrar extends AppCompatActivity {
    ////Validar correo
    public boolean validarCorreo(String correo){
       if(correo.indexOf("@")!=-1 && (correo.length()==1)){
-         Toast.makeText(this,"Correo no debe empezar por @",Toast.LENGTH_LONG).show();
+         Toast.makeText(getApplicationContext(),"Correo no debe empezar por @",Toast.LENGTH_LONG).show();
          return false;
       }else{
          Pattern p= Pattern.compile("[0-9]");

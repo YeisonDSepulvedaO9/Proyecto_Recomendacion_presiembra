@@ -37,7 +37,7 @@ import com.android.volley.toolbox.Volley;
 
 import com.example.proyecto_recomendacion_presiembra.Spiner.CustomSpinner;
 import com.example.proyecto_recomendacion_presiembra.Spiner.CultivoAdapter;
-import com.example.proyecto_recomendacion_presiembra.inventory.Data;
+import com.example.proyecto_recomendacion_presiembra.inventory.Datos_custom_spinner;
 
 
 import java.io.IOException;
@@ -51,14 +51,13 @@ import java.util.Map;
 public class activity_realizar_recomendacion extends AppCompatActivity implements View.OnClickListener, CustomSpinner.OnSpinnerEventsListener {
 
     ImageButton boton_fecha;
-    EditText txt_fecha, id;
-    TextView TextView_lat, TextView_long;
+    TextView TextView_lat, TextView_long,txt_fecha;
     Switch switch_gps;
 
     Button recom_proceso;
     Spinner recom_municipios, recom_cultivos;
-    EditText recom_fecha, recom_hectareas;
-    TextView recom_cordenadas, recom_ubicacion;
+    EditText  recom_hectareas;
+    TextView recom_cordenadas,recom_fecha, recom_ubicacion;
 
 
     private int dia, mes, año;
@@ -86,10 +85,11 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realizar_recomendacion);
 
+
         recom_municipios= (Spinner) findViewById(R.id.recom_spinner_municipio);
         recom_hectareas = (EditText) findViewById(R.id.recom_txt_hectareas);
         recom_cultivos = (Spinner) findViewById(R.id.recom_spinner_cultivos);
-        recom_fecha = (EditText) findViewById(R.id.recom_txt_fecha);
+        recom_fecha = (TextView) findViewById(R.id.recom_txt_fecha);
         recom_proceso= (Button) findViewById(R.id.recom_button_proceso);
         recom_cordenadas=(TextView) findViewById(R.id.coord);
         recom_ubicacion=(TextView) findViewById(R.id.ubica);
@@ -106,17 +106,17 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         spinner_municipios.setAdapter(adapter_municipios);
 
 
-// Spinner cultivos
+        // Spinner cultivos personalizado
         spinner_cultivos = findViewById(R.id.recom_spinner_cultivos);
         spinner_cultivos.setSpinnerEventsListener(this);
 
-        adapter = new CultivoAdapter(activity_realizar_recomendacion.this, Data.getFruitList());
+        adapter = new CultivoAdapter(activity_realizar_recomendacion.this, Datos_custom_spinner.getFruitList());
         spinner_cultivos.setAdapter(adapter);
 
 
         //Boton calendario
         boton_fecha = (ImageButton) findViewById(R.id.calndar_button);
-        txt_fecha = (EditText) findViewById(R.id.recom_txt_fecha);
+        txt_fecha = (TextView) findViewById(R.id.recom_txt_fecha);
         boton_fecha.setOnClickListener(this);
 
         //Switch
@@ -136,9 +136,12 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
                 TextView_lat.setText("");
                 TextView_long.setText("");
             }
+            return;
         }
     }
     @Override
+
+    //Metodo para boton calendario y obtener una fecha actual o futura
     public void onClick(View viewCalenadario) {
         if (viewCalenadario==boton_fecha){
             final Calendar calendario= Calendar.getInstance();
@@ -158,7 +161,7 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         }
     }
 
-    // GPS PERMISOS
+    // GPS PERMISOS para obtener coordenadas
     public void localizacion() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}
@@ -177,20 +180,22 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
             Log.d("Latitud",String.valueOf(lati));
             Log.d("Longitud",String.valueOf(longi));
 
-            Geocoder geocoder= new Geocoder(getApplicationContext(), Locale.getDefault());
+                Geocoder geocoder= new Geocoder(getApplicationContext(), Locale.getDefault());
             try{
-                List<Address> direcion = geocoder.getFromLocation(lati, longi, 1);
+                List<Address> direcion = geocoder.getFromLocation(lati, longi,1);
                 ubicacion_recom= (direcion.get(0).getAddressLine(0));
+                System.out.println(ubicacion_recom);
+                recom_cordenadas.setText(ubicacion_recom);
+
             }catch (IOException e){
                 e.printStackTrace();
             }
         }
 
-        recom_cordenadas.setText("Latitud: "+lati+ " Longitud: "+longi);
-        recom_ubicacion.setText(ubicacion_recom);
+        recom_ubicacion.setText("Latitud: "+lati+ " Longitud: "+longi);
+
     }
-
-
+//Metodo para enviar los datos a la base de datos
     private void ejecutarRecomendacion(String URL) {
         StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -200,7 +205,7 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Error contactarse con el administrador",Toast.LENGTH_LONG).show();
             }
         }) {
             @Nullable
@@ -228,29 +233,43 @@ public class activity_realizar_recomendacion extends AppCompatActivity implement
         spinner_cultivos.setBackground(getResources().getDrawable(R.drawable.bg_spinner_fruit));
     }
     public void onClickFinal(View view) {
-
         rec_municipio= recom_municipios.getSelectedItem().toString();
         rec_fecha= recom_fecha.getText().toString();
         rec_hectraras=recom_hectareas.getText().toString().trim();
 
-        int valorculti=Integer.parseInt(recom_cultivos.getSelectedItem().toString());
-        if (valorculti == 0) {
-            rec_cultivo="Arveja";
-        }else if(valorculti == 1){
-            rec_cultivo="Fresa";
-        }else if(valorculti == 2){
-            rec_cultivo="Papa";
+//Set error para verificar que realmente llenen todos los campos para una optima recomendacion
+        if(rec_hectraras.isEmpty()){
+            recom_hectareas.setError("Digitar hectareas del cultivo estimados");
+            recom_hectareas.requestFocus();
+            return;
+        }
+        if(rec_fecha.isEmpty()){
+            recom_fecha.setError("Seleccionar fecha");
+            recom_fecha.requestFocus();
+            return;
+        }
+        else{
+            int valorculti = Integer.parseInt(recom_cultivos.getSelectedItem().toString());
+            if (valorculti == 0) {
+                rec_cultivo = "Arveja";
+            } else if (valorculti == 1) {
+                rec_cultivo = "Fresa";
+            } else if (valorculti == 2) {
+                rec_cultivo = "Papa";
+            }
+            ejecutarRecomendacion("http://192.168.0.10/proyecto_presiembra/realizar_recom.php");
+            Intent finalreco = new Intent(activity_realizar_recomendacion.this, carga_porgressbar.class);
+            finalreco.putExtra("municipio_recom", rec_municipio);
+            finalreco.putExtra("hectareas_recom", rec_hectraras);
+            finalreco.putExtra("cultivo_recom", rec_cultivo);
+            finalreco.putExtra("fecha_recom", rec_fecha);
+            startActivity(finalreco);
+            finish();
+
         }
 
 
-        ejecutarRecomendacion("http://192.168.0.10/proyecto_presiembra/realizar_recom.php");
-        Intent finalreco= new Intent(activity_realizar_recomendacion.this,carga_porgressbar.class);
-        finalreco.putExtra("municipio_recom",rec_municipio);
-        finalreco.putExtra("hectareas_recom",rec_hectraras);
-        finalreco.putExtra("cultivo_recom",rec_cultivo);
-        finalreco.putExtra("fecha_recom",rec_fecha);
-        startActivity(finalreco);
-        finish();
+
     }
 
 

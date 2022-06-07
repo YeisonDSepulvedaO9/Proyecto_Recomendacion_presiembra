@@ -4,23 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Consulta_recyclerview.activity.MainActivity_recycler">
+    android:background="@drawable/fondo_appi"
+    tools:context=".recyclerview.activity.MainActivity_recycler">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/svSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:iconifiedByDefault="false"
-        app:queryHint="Buscar titulo"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLista"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="737dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/svSearch" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="REPORTE DE RECOMENDACIONES"
+            android:textColor="#BC2D2D"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="18dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/svSearch"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:background="#9AAAA4A4"
+                app:iconifiedByDefault="false"
+                app:queryHint="Buscar cultivo">
+
+            </androidx.appcompat.widget.SearchView>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="435dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLista"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/regresar_historial"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="?attr/homeAsUpIndicator"
+            android:text="menú principal"
+            android:textSize="20sp"
+            app:cornerRadius="18dp"
+            app:iconPadding="2dp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

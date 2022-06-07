@@ -9,20 +9,14 @@ public class User {
     String rentabilida;
 
 
-    public User(int idusuer, String nombreuser, String cultivoreco, String rentabilida) {
+    public User(String nombreuser) {
         this.idusuer = idusuer;
         this.nombreuser = nombreuser;
         this.cultivoreco = cultivoreco;
         this.rentabilida = rentabilida;
     }
 
-    public int getIdusuer() {
-        return idusuer;
-    }
 
-    public void setIdusuer(int idusuer) {
-        this.idusuer = idusuer;
-    }
 
     public String getNombreuser() {
         return nombreuser;

@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
+            <TextView
                 android:id="@+id/recom_txt_fecha"
                 android:layout_width="329dp"
                 android:layout_height="match_parent"
@@ -123,23 +123,32 @@
             android:layout_width="189dp"
             android:layout_height="87dp"
             android:layout_marginStart="92dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="152dp"
             android:onClick="onClickFinal"
             android:text="Recomendar"
             app:cornerRadius="20dp" />
 
-        <TextView
-            android:id="@+id/coord"
-            android:layout_width="77dp"
-            android:layout_height="23dp"
-            android:layout_marginTop="62dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/ubica"
-            android:layout_width="79dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="11dp" />
+            <TextView
+                android:id="@+id/coord"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:text="a"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/ubica"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="b"
+                android:textSize="12sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

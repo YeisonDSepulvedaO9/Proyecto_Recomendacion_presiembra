@@ -12,11 +12,9 @@
         android:label="Proyecto Presiembra"
         android:roundIcon="@mipmap/ic_index_a"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.Proyecto_Recomendacion_presiembra"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
         <activity
             android:name=".carga_porgressbar"
             android:exported="false" />
@@ -28,9 +26,6 @@
             android:exported="false" />
         <activity
             android:name=".registrar"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_consulta_reportes"
             android:exported="false" />
         <activity
             android:name=".activity_realizar_recomendacion"
@@ -49,19 +44,19 @@
             android:theme="@style/Theme.Proyecto_Recomendacion_presiembra.NoActionBar" />
 
         <activity
-            android:name=".Consulta_recyclerview.activity.DetailActivity"
+            android:name=".recyclerview.activity.DetailActivity"
             android:exported="false"/>
+        <activity
+            android:name=".recyclerview.activity.MainActivity_recycler"
+            android:exported="false"/>
+
         <activity
             android:name=".activity_menu_principal"
-            android:exported="false"/>
-        <activity
-            android:name=".Consulta_recyclerview.activity.MainActivity_recycler"
             android:layout_gravity="center"
             android:exported="true"
             android:label="Menu principal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

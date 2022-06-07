@@ -7,6 +7,10 @@
     android:background="@drawable/fondo_appi"
     tools:context=".Reporte_Recomendacion">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="9dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -41,6 +45,7 @@
                         android:id="@+id/imageView4"
                         android:layout_width="199dp"
                         android:layout_height="111dp"
+                        android:background="#B4063208"
                         app:srcCompat="@drawable/logo" />
                 </LinearLayout>
 
@@ -52,7 +57,7 @@
                     android:padding="15dp">
 
                     <TextView
-                        android:id="@+id/textView35"
+                        android:id="@+id/nombre_perfil"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:gravity="center_horizontal"
@@ -61,8 +66,7 @@
                         android:textSize="20dp"
                         android:textStyle="bold|italic" />
 
-                    <TextView
-                        android:id="@+id/textView60"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="14dp" />
 
@@ -74,8 +78,7 @@
                         android:text="Despues de un análisis, e le recomienda al usuario sembrar :"
                         android:textSize="18dp" />
 
-                    <TextView
-                        android:id="@+id/textView61"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="9dp" />
 
@@ -89,25 +92,24 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:text="Nombre cultivo"
-                            android:textSize="18dp" />
+                            android:text="Fresa"
+                            android:textSize="18dp"
+                            android:textStyle="bold|italic" />
 
                     </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView62"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="9dp" />
 
                     <TextView
-                        android:id="@+id/textView39"
+                        android:id="@+id/reporte_cultivo"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:text="Despues de"
                         android:textSize="15dp" />
 
-                    <TextView
-                        android:id="@+id/textView63"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="9dp" />
 
@@ -119,8 +121,7 @@
                         android:text="Datos"
                         android:textSize="18dp" />
 
-                    <TextView
-                        android:id="@+id/textView64"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="9dp" />
 
@@ -137,15 +138,14 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/Resul_ofert"
+                            android:id="@+id/correo_perfil"
                             android:layout_width="114dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:textSize="15dp" />
                     </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView65"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="9dp" />
 
@@ -159,19 +159,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Rentabilidad"
+                            android:text="Posible producción Ton/H"
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/textFechaInicioCursoCertificado"
+                            android:id="@+id/municipio_perfil"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:textSize="15dp" />
                     </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView66"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="9dp" />
 
@@ -182,22 +181,22 @@
 
                         <TextView
                             android:id="@+id/txtubi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="Ubicación"
+                            android:text="Fecha inicio"
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/resgis_culti"
+                            android:id="@+id/cultivo_perfil"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:text="00/00/0000"
                             android:textSize="15dp" />
                     </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView28"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="9dp" />
 
@@ -211,7 +210,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Producticidad"
+                            android:text="Fecha ciclo"
                             android:textSize="15dp" />
 
                         <TextView
@@ -223,6 +222,10 @@
                             android:textSize="15dp" />
                     </LinearLayout>
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="9dp" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -232,25 +235,21 @@
                 android:layout_height="73dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
 
                 <Button
-                    android:id="@+id/button5"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:id="@+id/btvolver_reporte"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:backgroundTint="#F7F7F6"
                     android:drawableLeft="?attr/homeAsUpIndicator"
-                    android:text="Salir"
-                    android:textColor="#e55854"
+                    android:onClick="onClick"
+                    android:text="Menu principal"
                     android:textSize="20sp"
                     app:cornerRadius="18dp"
-                    app:iconPadding="2dp"
-                    app:strokeColor="#e55854" />
+                    app:iconPadding="2dp" />
 
             </LinearLayout>
 

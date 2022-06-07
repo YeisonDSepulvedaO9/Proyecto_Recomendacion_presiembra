@@ -52,6 +52,7 @@
                         android:id="@+id/imageView4"
                         android:layout_width="199dp"
                         android:layout_height="111dp"
+                        android:background="#B4063208"
                         app:srcCompat="@drawable/arveja" />
                 </LinearLayout>
 
@@ -63,7 +64,7 @@
                     android:padding="15dp">
 
                     <TextView
-                        android:id="@+id/textView35"
+                        android:id="@+id/nombre_perfil"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:gravity="center_horizontal"
@@ -111,7 +112,7 @@
                         android:layout_height="9dp" />
 
                     <TextView
-                        android:id="@+id/textView39"
+                        android:id="@+id/reporte_cultivo"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:text="La  arveja requiere suelos sueltos, profundos, con buen  contenido de materia orgánica y pH entre 5,5 y 6,8"
@@ -148,7 +149,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/Resul_ofert"
+                            android:id="@+id/correo_perfil"
                             android:layout_width="114dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -175,7 +176,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/textFechaInicioCursoCertificado"
+                            android:id="@+id/municipio_perfil"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -226,7 +227,7 @@
 
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/btvolver_reporte"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:backgroundTint="#F7F7F6"

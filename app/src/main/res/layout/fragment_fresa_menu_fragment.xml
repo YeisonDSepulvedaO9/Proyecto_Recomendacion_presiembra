@@ -52,6 +52,7 @@
                         android:id="@+id/imageView4"
                         android:layout_width="199dp"
                         android:layout_height="111dp"
+                        android:background="#B4063208"
                         app:srcCompat="@drawable/fresa" />
                 </LinearLayout>
 
@@ -63,7 +64,7 @@
                     android:padding="15dp">
 
                     <TextView
-                        android:id="@+id/textView35"
+                        android:id="@+id/nombre_perfil"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:gravity="center_horizontal"
@@ -111,7 +112,7 @@
                         android:layout_height="9dp" />
 
                     <TextView
-                        android:id="@+id/textView39"
+                        android:id="@+id/reporte_cultivo"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:text="La fresa se desarrolla en suelos ricos en materia orgánica,  aireados, bien drenados, pero con cierta capacidad de retención  de agua. El nivel óptimo de pH es de 6,5 o menos."
@@ -148,7 +149,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/Resul_ofert"
+                            android:id="@+id/correo_perfil"
                             android:layout_width="114dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -175,7 +176,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/textFechaInicioCursoCertificado"
+                            android:id="@+id/municipio_perfil"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -226,18 +227,14 @@
 
 
                 <Button
-                    android:id="@+id/button5"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:id="@+id/btvolver_reporte"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:backgroundTint="#F7F7F6"
                     android:drawableLeft="?attr/homeAsUpIndicator"
                     android:text="Salir"
-                    android:textColor="#e55854"
                     android:textSize="20sp"
                     app:cornerRadius="18dp"
-                    app:iconPadding="2dp"
-                    app:strokeColor="#e55854" />
+                    app:iconPadding="2dp" />
 
             </LinearLayout>
 

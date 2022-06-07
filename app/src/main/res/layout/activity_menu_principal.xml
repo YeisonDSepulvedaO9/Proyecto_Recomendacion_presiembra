@@ -33,7 +33,38 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="10dp" />
+
+        <ImageView
+            android:id="@+id/IBoton_recomendador"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/reco_new" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BFFF9800"
+            android:text="Realizar recomendación"
+            android:textAlignment="center"
+            android:textColor="#4E0101"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -54,19 +85,16 @@
                 android:layout_weight="1" />
 
             <ImageButton
-                android:id="@+id/IBoton_recomendador"
+                android:id="@+id/IBcultivos"
                 android:layout_width="200dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
                 android:backgroundTint="#C4C8841F"
-                app:srcCompat="@drawable/reco_new" />
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/agricultura" />
 
         </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -75,35 +103,36 @@
 
             <TextView
                 android:id="@+id/percent"
-                android:layout_width="200dp"
+                android:layout_width="191dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
+                android:background="#BFFF9800"
                 android:text="Perfil"
                 android:textAlignment="center"
-                android:textColor="#6c6f00"
+                android:textColor="#4E0101"
                 android:textSize="20sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="normal|bold" />
 
             <Space
-                android:layout_width="8dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_width="12dp"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="200dp"
                 android:layout_height="30dp"
-                android:text="Recomendación"
+                android:background="#BFFF9800"
+                android:text="Cultivos"
                 android:textAlignment="center"
-                android:textColor="#6c6f00"
+                android:textColor="#4E0101"
                 android:textSize="20sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="normal|bold" />
 
         </LinearLayout>
 
         <Space
-            android:layout_width="wrap_content"
-            android:layout_height="20dp" />
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -119,7 +148,7 @@
                 android:background="@android:color/transparent"
                 android:backgroundTint="#C4C8841F"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/plantando" />
+                app:srcCompat="@drawable/lits" />
 
             <Space
                 android:layout_width="8dp"
@@ -138,10 +167,6 @@
                 app:srcCompat="@drawable/log_out_final" />
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -149,28 +174,29 @@
 
             <TextView
                 android:id="@+id/textView23"
-                android:layout_width="200dp"
+                android:layout_width="191dp"
                 android:layout_height="30dp"
+                android:background="#BFFF9800"
                 android:text="Historial"
                 android:textAlignment="center"
-                android:textColor="#6c6f00"
+                android:textColor="#4E0101"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="normal|bold" />
 
             <Space
-                android:layout_width="8dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_width="12dp"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textView24"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:background="#BFFF9800"
                 android:text="Salir"
                 android:textAlignment="center"
-                android:textColor="#6c6f00"
+                android:textColor="#4E0101"
                 android:textSize="20sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="normal|bold" />
 
         </LinearLayout>
 

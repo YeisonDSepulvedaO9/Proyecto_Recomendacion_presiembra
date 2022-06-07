@@ -8,17 +8,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.proyecto_recomendacion_presiembra.inicio;
+import com.example.proyecto_recomendacion_presiembra.recyclerview.activity.MainActivity_recycler;
+import com.example.proyecto_recomendacion_presiembra.entidades.User;
+
 
 
 public class activity_menu_principal extends AppCompatActivity {
 
 
     Class icinio;
-    ImageView boton_perfil,boton_recomendador,boton_histori_recomen,boton_log_out;
+    ImageView boton_perfil,boton_recomendador,boton_histori_recomen,boton_log_out,boton_cultivos;
 
 
     @Override
@@ -27,13 +28,23 @@ public class activity_menu_principal extends AppCompatActivity {
         setContentView(R.layout.activity_menu_principal);
 
 
-
-        String users= getIntent().getStringExtra("useraIni");
-        String correo= getIntent().getStringExtra("useraRego");
-        String user=correo;
-
+        String users= getIntent().getStringExtra("usuario");
         System.out.println("el correo inicio. "+users);
-        System.out.println("el correo registro "+correo);
+        User user=new User("");
+        user.setNombreuser(users);
+
+
+
+        // Boton cultivos activity
+        boton_cultivos= (ImageView) findViewById(R.id.IBcultivos);
+        boton_cultivos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view_boton_ultivos) {
+                Intent B_cultivos= new Intent(activity_menu_principal.this, inicio.class);
+                startActivity(B_cultivos);
+                finish();
+            }
+        });
 
 
         // Boton para perfil
@@ -42,7 +53,9 @@ public class activity_menu_principal extends AppCompatActivity {
             @Override
             public void onClick(View view_boton_perfil) {
                 Intent B_perf= new Intent(activity_menu_principal.this,Perfil.class);
+                B_perf.putExtra("usuario",users);
                 startActivity(B_perf);
+
                 finish();
             }
         });
@@ -64,7 +77,7 @@ public class activity_menu_principal extends AppCompatActivity {
         boton_histori_recomen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view_boton_recomandador) {
-                Intent B_hist= new Intent(activity_menu_principal.this,MainActivity2.class);
+                Intent B_hist= new Intent(activity_menu_principal.this, MainActivity_recycler.class);
                 startActivity(B_hist);
                 finish();
             }

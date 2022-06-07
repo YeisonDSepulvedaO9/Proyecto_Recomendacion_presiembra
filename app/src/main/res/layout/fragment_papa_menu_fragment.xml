@@ -55,6 +55,7 @@
                         android:id="@+id/imageView4"
                         android:layout_width="199dp"
                         android:layout_height="111dp"
+                        android:background="#B4063208"
                         app:srcCompat="@drawable/potato" />
                 </LinearLayout>
 
@@ -66,7 +67,7 @@
                     android:padding="15dp">
 
                     <TextView
-                        android:id="@+id/textView35"
+                        android:id="@+id/nombre_perfil"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:gravity="center_horizontal"
@@ -114,7 +115,7 @@
                         android:layout_height="9dp" />
 
                     <TextView
-                        android:id="@+id/textView39"
+                        android:id="@+id/reporte_cultivo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="La papa potencializa su producción en suelos con un pH de 5,5 a 7,0 con baja  salinidad."
@@ -151,7 +152,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/Resul_ofert"
+                            android:id="@+id/correo_perfil"
                             android:layout_width="114dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -178,7 +179,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/textFechaInicioCursoCertificado"
+                            android:id="@+id/municipio_perfil"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -229,7 +230,7 @@
 
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/btvolver_reporte"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"

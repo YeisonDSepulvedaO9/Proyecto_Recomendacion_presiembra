@@ -1,5 +1,7 @@
 package com.example.proyecto_recomendacion_presiembra;
 
+import static java.lang.Short.valueOf;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,7 +24,7 @@ public class carga_porgressbar extends AppCompatActivity {
     int tiempo_carga;
     Date suma_fecha;
     String fecha_final;
-    int dia, mes,años;
+    int dias_general,dia, mes,años;
 
 
     String cultivo;
@@ -34,6 +36,16 @@ public class carga_porgressbar extends AppCompatActivity {
     int papa,fresa,arveja;
     String culti_final;
     int dias;
+    int cuenta_a,cuenta_f,cuenta_p;
+
+    boolean oaa,oma,oaf,omf,oap,omp,obp;
+
+    String recomendacion;
+    double THa,promedio_produccion;
+
+
+    Intent carga_porgressbar;
+
 
 
 
@@ -49,7 +61,7 @@ public class carga_porgressbar extends AppCompatActivity {
 
 
         int tiempo_carga=0;
-        tiempo_carga = (int)(Math.random()*4000+7000);
+        tiempo_carga = (int)(Math.random()*2000+4000);
         System.out.println("tiwmpo carga" +
                 " "+tiempo_carga);
 
@@ -59,35 +71,7 @@ public class carga_porgressbar extends AppCompatActivity {
         String cultivo= getIntent().getStringExtra("cultivo_recom");
         String fecha= getIntent().getStringExtra("fecha_recom");
 
-/*
-        Proceso_recomendacion arveja_proceso= new Proceso_recomendacion(municipo,hectarea,cultivo,fecha,dias);
-        arveja_proceso.setCultivo(cultivo);
-        arveja_proceso.setMunicipio(municipo);
-        arveja_proceso.setHectareas(hectarea);
-        arveja_proceso.setFecha(fecha);
-        arveja_proceso.setDias(135);
-        try {
-            arveja_proceso.sumarDiasAFecha(fecha,135);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
-
-        Proceso_recomendacion fresa_proceso= new Proceso_recomendacion(municipo,hectarea,cultivo,fecha,dias);
-        fresa_proceso.setCultivo(cultivo);
-        fresa_proceso.setMunicipio(municipo);
-        fresa_proceso.setHectareas(hectarea);
-        fresa_proceso.setFecha(fecha);
-        fresa_proceso.setDias(135);
-
-        Proceso_recomendacion papa_proceso= new Proceso_recomendacion(municipo,hectarea,cultivo,fecha,dias);
-        papa_proceso.setCultivo(cultivo);
-        papa_proceso.setMunicipio(municipo);
-        papa_proceso.setHectareas(hectarea);
-        papa_proceso.setFecha(fecha);
-        papa_proceso.setDias(100);
-
-*/
 
         System.out.println("municipio "+municipo);
         System.out.println("hectares "+hectarea);
@@ -96,23 +80,37 @@ public class carga_porgressbar extends AppCompatActivity {
         System.out.println(suma_fecha);
         String day="";
 
+        //findDate(fecha);
 
-        int cultiselect = (int) (Math.random() * (3 - 1)) + 1;
-        String date = fecha;
+        String date=fecha;
+        int hecta= Integer.parseInt(hectarea.valueOf(hectarea));
+        System.out.println("posibles hectareas"+hecta);
+
+
 
         try {
-            sumarDiasAFecha(date, 130);
+            int dias= cultivoDias(cultivo);
+            String fecha_fin= sumarDiasAFecha(fecha,dias);
+            int mes_fin= findDate(sumarDiasAFecha(fecha_fin, dias));
+            String oferta= oferta(cultivo,mes_fin);
+            double cultiproducc= cultiproduccion(cultivo);
+            double valor= produccion(hecta,cultiproducc);
+
+            if(oferta=="Alta"){
+                String fecha_finn= sumarDiasAFecha(fecha,120);
+                int mes_finn= findDate(sumarDiasAFecha(fecha_fin, 120));
+                String recoemndacion= recoemndacionAlea(mes_finn);
+                String ofertaa= oferta(cultivo,mes_fin);
+                double cultiproduccc= cultiproduccion(cultivo);
+                double valorr= produccion(hecta,cultiproduccc);
+            }
+
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        findDate(date);
-
-
-
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_carga_porgressbar);
-
 
 
         new Handler().postDelayed(new Runnable() {
@@ -121,11 +119,39 @@ public class carga_porgressbar extends AppCompatActivity {
 
                 Intent carga_porgressbar = new Intent(carga_porgressbar.this, Reporte_Recomendacion.class);
                 startActivity(carga_porgressbar);
+                carga_porgressbar.putExtra("cultivo", getIntent().getStringExtra("cultivo_recom"));
+                carga_porgressbar.putExtra("fecha_ini", getIntent().getStringExtra("fecha_recom"));
+                carga_porgressbar.putExtra("fecha_final", fecha_final);
+                carga_porgressbar.putExtra("productividad", cultivalor);
+
                 finish();
+
+
             }
         },tiempo_carga);
     }
 
+    public int cultivoDias(String cultivo) throws ParseException {
+        int dias=0;
+        if (cultivo.equals("Arveja")) {
+             dias = 130;
+        } else if (cultivo.equals("Fresa")) {
+            dias = 135;
+        } else if (cultivo.equals("Papa")) {
+            dias = 100;
+        } return dias;
+    }
+
+    public double cultiproduccion(String cultivo) throws ParseException {
+        double HTa=0;
+        if (cultivo.equals("Arveja")) {
+            HTa = 2;
+        } else if (cultivo.equals("Fresa")) {
+            HTa = 66.50;
+        } else if (cultivo.equals("Papa")) {
+            HTa = 20.24;
+        } return HTa;
+    }
 
 
     public String sumarDiasAFecha(String fecha, int dias) throws ParseException {
@@ -143,160 +169,166 @@ public class carga_porgressbar extends AppCompatActivity {
         int año = calendar.get(Calendar.YEAR);
         mes= calendar.get(Calendar.MONTH)+1;
         int dia= calendar.get(Calendar.DAY_OF_MONTH);
-        String fecha_final=(dia+"/"+(mes+1)+"/"+año);
-        System.out.println(fecha_final);
+        fecha_final=(dia+"/"+(mes)+"/"+año);
+        System.out.println("fecha pronostico "+fecha_final);
         return fecha_final;
-
-
-
     }
 
-
-    // Funcion obtener fecha
-
-    public static void findDate(String date)
+    public static int findDate(String date)
     {
-        // Splitting the given date by '-'
+        // Splitting the given date by '/'
         String dateParts[] = date.split("/");
-        String daya = dateParts[0];
-        String montha = dateParts[1];
-        String yeara = dateParts[2];
+        String days = dateParts[0];
+        String months = dateParts[1];
+        String years = dateParts[2];
+
+        int dia= Integer.parseInt(days.valueOf(days));
+        int mes= Integer.parseInt(months.valueOf(months));
+        int año= Integer.parseInt(years.valueOf(years));
 
 
 
         // Printing the day, month, and year
-        System.out.println("Day: " + daya);
-        System.out.println("Month: " + montha);
-        System.out.println("Year: " + yeara);
+        System.out.println("Day:--------- " + dia);
+        System.out.println("Month: " + mes);
+        System.out.println("Year------: " + año);
 
+        return mes;
     }
 
 
-    int cuenta=0;
-        public void calculo(String date, String cultivo ,String hectarea){
-
-        String dateParts[] = date.split("/");
-        String day = dateParts[0];
-        String month = dateParts[1];
-        String year = dateParts[2];
-            System.out.println(" prueba de veracidada"+day);
-            System.out.println(" prueba de veracidada"+month);
-        System.out.println(" prueba de veracidada"+year);
 
 
 
-        String culti_final;
-        if(cultivalor==0){
-            culti_final="Arveja";
-            System.out.print(culti_final);
-        } else if (cultivalor==1){
-            culti_final="Fresa";
-            System.out.print(culti_final);
-        }else {
-            culti_final="Papa";
-            System.out.print(culti_final);
+
+    public String oferta(String cultivo, int mes) throws ParseException {
+
+        int dias=0;
+        String tipoofera = null;
+        if (cultivo.equals("Arveja")) {
+
+            int [] Altaarveja={1, 2, 4,6,7, 8, 9, 10};
+            int [] Mediaarveja={4, 11, 12};
+
+            boolean oaa = ofertaalta_arveja(Altaarveja, mes);
+            boolean oma = ofertamedia_arveja(Mediaarveja, mes);
+
+            if(oma==true ){
+                tipoofera="Alta";
+            }else if(omf== true){
+                tipoofera="Media";
+            }
+        } else if (cultivo.equals("Fresa")) {
+
+            int [] Altafresa ={1,2,6,7,8,9,11,12};
+            int [] Mediafresa={3,4,5,10};
+
+            boolean oaf = ofertaalta_fresa(Altafresa, mes);
+            boolean omf = ofertamedia_fresa(Mediafresa, mes);
+
+            String valor;
+            ///Papa
+            if(oaf==true ){
+                tipoofera="Alta";
+            }else if(omf== true){
+                tipoofera="Media";
+            }
+
+        } else if (cultivo.equals("Papa")) {
+            int [] Altapapa={7,8,9,10,11,12};
+            int [] Mediapapa={1,2,3,6};
+            int [] Bajapapa={4,5};
+
+            boolean oap = ofertaalta_papa(Altapapa, mes);
+            boolean omp = ofertamedia_papa(Mediapapa, mes);
+            boolean obp = ofertabaja_papa(Bajapapa, mes);
+
+            String valor;
+            ///Papa
+            if(oap==true ){
+                tipoofera="Alta";
+            }else if(omp== true){
+                tipoofera="Media";
+            }else if(obp==true){
+                tipoofera="Baja";
+            }
         }
-
-        //String datos
-
-        String [] Altaarveja={"1", "2", "3","6","7", "8", "9", "10"};
-        String [] Mediaarveja={"4", "11", "12"};
-
-        String [] Altafresa ={"1","2","6","7", "8","9","11", "12"};
-        String [] Mediafresa={"3","4","5","10"};
-
-        String [] Altapapa={"7", "8", "9", "10", "11", "12"};
-        String [] Mediapapa={"1", "2", "3", "6"};
-        String [] Bajapapa={"4", "5"};
+        return tipoofera;
+    }
 
 
-        boolean general=false;
+    public double produccion(int hectareas,double THa){
+        System.out.println("prueba hectareas final "+hectareas);
+        System.out.println("prueba hectareas final "+THa);
+        double promedio_produccion;
 
-        //Boleanos nomenclatura  1valor= oferta ;2valor= tipo oferta(alta,media,baja); 3valor= cultivo(a=arveja,f=fresa,p=papa)
+        promedio_produccion= hectareas*THa;
+        System.out.println("Posible producción"+promedio_produccion+ recomendacion);;
+        return promedio_produccion;
 
-        boolean oaa = ofertaalta_arveja(Altapapa, month);
-        boolean oma = ofertamedia_arveja(Mediapapa, month);
+    }
 
-        boolean oaf = ofertaalta_fresa(Altapapa, month);
-        boolean omf = ofertamedia_fresa(Mediapapa, month);
+    public String recoemndacionAlea(int mes) throws ParseException {
 
-        boolean oap = ofertaalta_papa(Altapapa, month);
-        boolean omp = ofertamedia_papa(Mediapapa, month);
-        boolean obp = ofertabaja_papa(Bajapapa, month);
 
-        String valor;
-        int cuenta_a=0,cuenta_f=0,cuenta_p=0;
-        ////Arveja
-        if(oaa==true ){
-            System.out.println("alta "+month+"? \n"+oaa);
-            cuenta_a=+1;
-        }else if(oma== true){
-            System.out.println("Media "+month+"? \n"+oma);
-            cuenta_a=+2;
-        }
+        int [] Altapapa={7,8,9,10,11,12};
+        int [] Mediapapa={1,2,3,6};
+        int [] Bajapapa={4,5};
 
-        System.out.println(suma_fecha);
+        int [] Altaarveja={1, 2, 4,6,7, 8, 9, 10};
+        int [] Mediaarveja={4, 11, 12};
 
-        //Fresa
-        if(oaf==true ){
-            System.out.println("alta "+month+"? \n"+oaf);
-            cuenta_f=+1;
-        }else if(omf== true){
-            cuenta_f=+2;
-            System.out.println("Media "+month+"? \n"+omf);
-        }
+        int [] Altafresa ={1,2,6,7,8,9,11,12};
+        int [] Mediafresa={3,4,5,10};
 
+
+        boolean oaa = ofertaalta_arveja(Altaarveja, mes);
+        boolean oma = ofertamedia_arveja(Mediaarveja, mes);
+
+        boolean oaf = ofertaalta_fresa(Altafresa, mes);
+        boolean omf = ofertamedia_fresa(Mediafresa, mes);
+
+        boolean oap = ofertaalta_papa(Altapapa, mes);
+        boolean omp = ofertamedia_papa(Mediapapa, mes);
+        boolean obp = ofertabaja_papa(Bajapapa, mes);
+
+        String cultivalor = null;
         ///Papa
-        if(oap==true ){
-            System.out.println("alta "+month+"? \n"+obp);
-            cuenta_p=+1;
-        }else if(omp== true){
-            System.out.println("Media "+month+"? \n"+omp);
-            cuenta_p=+2;
-        }else if(oap==true){
-            System.out.println("baja "+month+"? \n"+oap);
-            cuenta_p=+3;
+        if(oma==true ){
+            cultivalor= "Arveja";
+        }else if(omf== true){
+            cultivalor= "Fresa";
+        }else if(obp==true){
+            cultivalor="Papa";
+        }else if(omp){
+            cultivalor="Papa";
         }
-
-
-        String recomendacion;
-
-        if(cuenta_a>cuenta_f&&cuenta_f>cuenta_p){
-            recomendacion="Arveja";
-
-        }else if(cuenta_f>cuenta_p && cuenta_p>cuenta_a){
-            System.out.print("Recomencionda fresa");
-            recomendacion="Arveja";
-        }else{
-            System.out.println("papa");
-        }
-
-
-
+        return cultivalor;
     }
 
 
-    public static boolean ofertaalta_arveja(final String[] Altaarveja, final String month) {
+    public static boolean ofertaalta_arveja(final int[] Altaarveja, final int month) {
         return ArrayUtils.contains(Altaarveja, month);
     }
-    public static boolean ofertamedia_arveja(final String[] Mediafresa, final String month) {
-        return ArrayUtils.contains(Mediafresa, month);
+    public static boolean ofertamedia_arveja(final int[] Mediaarveja, final int month) {
+        return ArrayUtils.contains(Mediaarveja, month);
     }
-    public static boolean ofertaalta_fresa(final String[] Altafresa, final String month) {
+    public static boolean ofertaalta_fresa(final int[] Altafresa, final int month) {
         return ArrayUtils.contains(Altafresa, month);
     }
-    public static boolean ofertamedia_fresa(final String[] Mediafresa, final String month) {
+    public static boolean ofertamedia_fresa(final int[] Mediafresa, final int month) {
         return ArrayUtils.contains(Mediafresa, month);
     }
-    public static boolean ofertaalta_papa(final String[] Altapapa, final String month) {
+    public static boolean ofertaalta_papa(final int[] Altapapa, final int month) {
         return ArrayUtils.contains(Altapapa, month);
     }
-    public static boolean ofertamedia_papa(final String[] Mediapapa, final String month) {
+    public static boolean ofertamedia_papa(final int[] Mediapapa, int month) {
         return ArrayUtils.contains(Mediapapa, month);
     }
-    public static boolean ofertabaja_papa(final String[] Bajapapa, final String month) {
+    public static boolean ofertabaja_papa(final int[] Bajapapa, int month) {
         return ArrayUtils.contains(Bajapapa, month);
     }
+
 
 
 

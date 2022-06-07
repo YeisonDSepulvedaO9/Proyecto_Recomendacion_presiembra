@@ -46,7 +46,7 @@ public class inicio extends AppCompatActivity implements NavigationView.OnNaviga
 
         fragmentManager= getSupportFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.frgprincipal,new menu_cultivos());
+        fragmentTransaction.add(R.id.frgprincipal,new BlankFragment());
         fragmentTransaction.commit();
 
         navigationView.setNavigationItemSelectedListener(this);
@@ -59,7 +59,7 @@ public class inicio extends AppCompatActivity implements NavigationView.OnNaviga
 
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frgprincipal, new arveja_menu_fragmento());
+                fragmentTransaction.replace(R.id.frgprincipal, new fragmento_arveja());
                 fragmentTransaction.commit();
                 break;
 

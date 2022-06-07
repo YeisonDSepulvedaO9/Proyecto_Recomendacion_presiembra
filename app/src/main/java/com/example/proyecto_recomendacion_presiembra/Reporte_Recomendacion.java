@@ -19,6 +19,24 @@ public class Reporte_Recomendacion extends AppCompatActivity implements View.OnC
         //volver2=(Button) findViewById(R.id.volver);
         //volver2.setOnClickListener(this);
 
+
+
+
+        String cultivo_fin= getIntent().getStringExtra("culti_fin");
+        String fecha_ini= getIntent().getStringExtra("fecha_ini");
+        String fecha_final= getIntent().getStringExtra("fecha_final");
+        String productividad= getIntent().getStringExtra("productividad");
+
+        System.out.println("el correo inicio aaa. "+cultivo_fin);
+        System.out.println("el correo regis  aaa "+fecha_ini);
+        System.out.println("el correo inicio aaa. "+fecha_final);
+        System.out.println("el correo regis  aaa "+productividad);
+
+
+
+
+
+
         String users= getIntent().getStringExtra("useraIni");
         String correo= getIntent().getStringExtra("useraRego");
         if(correo==null){
@@ -37,6 +55,7 @@ public class Reporte_Recomendacion extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
 
         Intent i= new Intent(Reporte_Recomendacion.this,Activity_inicio_sesion.class );
+
         startActivity(i);
 
     }

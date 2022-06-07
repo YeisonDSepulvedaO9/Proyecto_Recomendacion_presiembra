@@ -3,7 +3,7 @@ import com.example.proyecto_recomendacion_presiembra.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Data {
+public class Datos_custom_spinner {
 
     public static List<Cultivos> getFruitList() {
         List<Cultivos> cultivosList = new ArrayList<>();

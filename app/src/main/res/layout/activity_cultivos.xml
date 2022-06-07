@@ -65,7 +65,7 @@
             android:layout_height="20dp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btvolver_reporte"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:drawableLeft="?attr/homeAsUpIndicator"

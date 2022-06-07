@@ -18,25 +18,15 @@
 
     <TextView
         android:id="@+id/textvie"
-        android:layout_width="130dp"
-        android:layout_height="62dp"
+        android:layout_width="267dp"
+        android:layout_height="199dp"
         android:layout_marginStart="-11dp"
         android:layout_marginTop="35dp"
-        android:text="Menú"
+        android:text="Sistema de recomendación inteligente pre-siembra"
         android:textColor="#FFFCFC"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="251dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="8dp"
-        android:text="Este es un sistema de recomendación presiembra y fue desarrollado con el fin de brindar una herramienta de soporte al momento de tomar una decisión."
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textvie" />
 </androidx.constraintlayout.widget.ConstraintLayout>

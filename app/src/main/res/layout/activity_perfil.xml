@@ -14,7 +14,8 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,12 +59,12 @@
                     android:padding="15dp">
 
                     <TextView
-                        android:id="@+id/textView35"
+                        android:id="@+id/nombre_perfil"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:gravity="center_horizontal"
                         android:padding="8sp"
-                        android:text="YEISON SEPULVEA"
+                        android:text="Yeison Sepulveda"
                         android:textSize="20dp"
                         android:textStyle="bold|italic" />
 
@@ -99,7 +100,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/Resul_ofert"
+                            android:id="@+id/correo_perfil"
                             android:layout_width="114dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -126,7 +127,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/textFechaInicioCursoCertificado"
+                            android:id="@+id/municipio_perfil"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -153,7 +154,7 @@
                             android:textSize="15dp" />
 
                         <TextView
-                            android:id="@+id/resgis_culti"
+                            android:id="@+id/cultivo_perfil"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -197,6 +198,12 @@
                             android:id="@+id/textView21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
+
+                        <Button
+                            android:id="@+id/buscar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button" />
 
 
                     </LinearLayout>

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.Spinner;
 
 import com.example.proyecto_recomendacion_presiembra.R;
-import com.example.proyecto_recomendacion_presiembra.inventory.Data;
+import com.example.proyecto_recomendacion_presiembra.inventory.Datos_custom_spinner;
 
 
 public class MainActivity extends AppCompatActivity implements CustomSpinner.OnSpinnerEventsListener {
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         spinner_fruits = findViewById(R.id.spinner_fruits);
         spinner_fruits.setSpinnerEventsListener(this);
 
-        adapter = new CultivoAdapter(MainActivity.this, Data.getFruitList());
+        adapter = new CultivoAdapter(MainActivity.this, Datos_custom_spinner.getFruitList());
         spinner_fruits.setAdapter(adapter);
     }
 

@@ -50,7 +50,7 @@
                 android:layout_weight="1" />
 
             <ImageButton
-                android:id="@+id/IBoton_recomendador"
+                android:id="@+id/IBcultivos"
                 android:layout_width="200dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
