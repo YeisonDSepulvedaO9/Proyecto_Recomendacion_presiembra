@@ -64,7 +64,7 @@
                         android:layout_height="42dp"
                         android:gravity="center_horizontal"
                         android:padding="8sp"
-                        android:text="Yeison Sepulveda"
+                        android:text="Yeison Seplveda"
                         android:textSize="20dp"
                         android:textStyle="bold|italic" />
 
@@ -104,7 +104,7 @@
                             android:layout_width="114dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="yeitato1998@hotmail.com"
+                            android:text="yeisp98@hotmail.com"
                             android:textSize="15dp" />
                     </LinearLayout>
 
@@ -185,7 +185,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="27-05-2022"
+                            android:text="16/05/2022"
                             android:textSize="15dp" />
                     </LinearLayout>
 
@@ -198,12 +198,6 @@
                             android:id="@+id/textView21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
-
-                        <Button
-                            android:id="@+id/buscar"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Button" />
 
 
                     </LinearLayout>

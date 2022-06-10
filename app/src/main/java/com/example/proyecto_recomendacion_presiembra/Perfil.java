@@ -43,16 +43,12 @@ public class Perfil extends AppCompatActivity  {
         correo=(TextView) findViewById(R.id.correo_perfil);
         municipio=(TextView) findViewById(R.id.municipio_perfil);
         cultivo=(TextView) findViewById(R.id.cultivo_perfil);
-        Button buscar= (Button) findViewById(R.id.buscar);
 
 
 
-        buscar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                 perfil("http://192.168.0.10/proyecto_presiembra/perfil.php");
-            }
-        });
+
+
+
 
 
 
@@ -94,7 +90,7 @@ public class Perfil extends AppCompatActivity  {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Error contactarse con el administrador",Toast.LENGTH_LONG).show();
+
             }
         });
         RequestQueue requestQueue_recomen= Volley.newRequestQueue(this);

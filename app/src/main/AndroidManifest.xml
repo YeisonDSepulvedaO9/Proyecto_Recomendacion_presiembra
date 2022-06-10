@@ -17,27 +17,32 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".carga_porgressbar"
+            android:label="Detalle historial"
             android:exported="false" />
         <activity
             android:name=".Reporte_Recomendacion"
+            android:label="Reporte"
             android:exported="false" />
         <activity
             android:name=".Perfil"
+            android:label="Perfil"
             android:exported="false" />
         <activity
             android:name=".registrar"
+            android:label="Registar"
             android:exported="false" />
         <activity
             android:name=".activity_realizar_recomendacion"
             android:exported="false"
             android:label="Realizar recomendación" />
         <activity
-            android:name=".splash"
+            android:name=".Activity_inicio_sesion"
+            android:label="Inicio sesión"
             android:exported="false" />
         <activity
-            android:name=".Activity_inicio_sesion"
-            android:exported="false"
-            android:theme="@style/Theme.Proyecto_Recomendacion_presiembra.NoActionBar" />
+            android:name=".activity_menu_principal"
+            android:label="Menu principal"
+            android:exported="false"/>
         <activity
             android:name=".inicio"
             android:exported="false"
@@ -45,16 +50,17 @@
 
         <activity
             android:name=".recyclerview.activity.DetailActivity"
+            android:label="Detalle"
             android:exported="false"/>
         <activity
             android:name=".recyclerview.activity.MainActivity_recycler"
             android:exported="false"/>
 
         <activity
-            android:name=".activity_menu_principal"
+            android:name=".splash"
             android:layout_gravity="center"
-            android:exported="true"
-            android:label="Menu principal">
+            android:theme="@style/Theme.Proyecto_Recomendacion_presiembra.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

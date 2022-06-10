@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_appi"
-    tools:context=".arveja_menu_fragmento">>
+    tools:context=".fragmento_arveja">>
 
     <ScrollView
         android:layout_width="match_parent"

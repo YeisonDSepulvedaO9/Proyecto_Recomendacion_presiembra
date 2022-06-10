@@ -85,7 +85,7 @@ public class MainActivity_recycler extends AppCompatActivity implements Recycler
     }
     @Override
     public void itemClick(ItemList item) {
-        Intent intent = new Intent(this, DetailActivity.class);
+        Intent intent = new Intent(this, com.example.proyecto_recomendacion_presiembra.consu_detalle.class);
         intent.putExtra("itemDetail", item);
         startActivity(intent);
     }

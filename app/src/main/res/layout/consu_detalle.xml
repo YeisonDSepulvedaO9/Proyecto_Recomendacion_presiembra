@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_appi"
-    tools:context=".Reporte_Recomendacion">
+    tools:context=".consu_detalle$Activity_inicio_sesion">
 
     <Space
         android:layout_width="match_parent"

@@ -47,8 +47,6 @@ public class carga_porgressbar extends AppCompatActivity {
     Intent carga_porgressbar;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

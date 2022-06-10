@@ -92,7 +92,7 @@
                 android:layout_height="25dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bg_spinner_fruit"
-                android:dropDownVerticalOffset="40dp"/>
+                android:dropDownVerticalOffset="40dp" />
 
             <TextView
                 android:id="@+id/textView17"

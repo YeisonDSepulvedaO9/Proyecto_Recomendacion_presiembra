@@ -54,8 +54,7 @@ public class Reporte_Recomendacion extends AppCompatActivity implements View.OnC
 
     public void onClick(View view) {
 
-        Intent i= new Intent(Reporte_Recomendacion.this,Activity_inicio_sesion.class );
-
+        Intent i= new Intent(Reporte_Recomendacion.this, activity_menu_principal.class );
         startActivity(i);
 
     }
